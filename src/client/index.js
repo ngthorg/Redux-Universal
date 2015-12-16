@@ -1,4 +1,3 @@
-'use strict';
 import 'stylesheets/main'
 import React from 'react'
 import { render } from 'react-dom'

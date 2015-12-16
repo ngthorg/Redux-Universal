@@ -2,6 +2,9 @@
   "name": "redux-universal",
   "version": "0.0.1",
   "description": "example redux universal",
+  "author": [
+    "ngthong <ngthorg@gmail.com>"
+  ],
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production NODE_PATH=./src node server.js",
@@ -10,6 +13,11 @@
     "test": "NODE_PATH=./src mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
     "test:watch": "npm test -- --watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngthorg/Redux-Universal.git"
+  },
+  "license": "BSD",
   "dependencies": {
     "compression": "^1.6.0",
     "cookie-parser": "^1.4.0",

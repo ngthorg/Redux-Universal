@@ -1,6 +1,7 @@
-require('babel/register')({
-	stage: 0,
-})
+require("babel-core/register");
+require("babel-polyfill");
+
+
 global.__DEV__ = true;
 
 const express = require('express')

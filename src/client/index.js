@@ -1,5 +1,5 @@
 'use strict';
-import 'stylesheets/base'
+import 'stylesheets/main'
 import React from 'react'
 import { render } from 'react-dom'
 import Immutable from 'immutable'

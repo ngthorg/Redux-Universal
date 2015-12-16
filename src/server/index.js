@@ -12,7 +12,7 @@ import HtmlComponent from 'server/html';
 import { API_URL } from 'config';
 
 
-export default async function (req, res, next) {
+module.exports = async function (req, res, next) {
   const finalCreateStore = applyMiddleware(promiseMiddleware)(createStore);
   const store = finalCreateStore(Reducers, {});
 

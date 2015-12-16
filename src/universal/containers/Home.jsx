@@ -4,11 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import DocumentMeta from 'react-document-meta'
 import * as CounterActions from 'universal/actions/counter'
-import { CLIENT } from 'universal/lib/env'
 
-if(CLIENT){
-  require('stylesheets/containers/home')
-}
 
 const meta = {
 	title: "Home"

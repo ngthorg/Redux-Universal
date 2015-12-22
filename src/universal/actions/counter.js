@@ -21,7 +21,7 @@ export function incrementIfOdd() {
   return (dispatch, getState) => {
     const { counter } = getState()
 
-    if (counter.get('clicked') % 2 === 0) {
+    if (counter.clicked % 2 === 0) {
       return
     }
 

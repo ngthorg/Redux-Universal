@@ -6,7 +6,7 @@ function isFunc(func) {
 
 export default function promiseMiddleware({ dispatch, getState}) {
   return next => action => {
-    const { promise, type, ...rest } = action;
+    const { promise, types, ...rest } = action;
 
     if (!promise) {
       return isFunc(action)
@@ -14,9 +14,7 @@ export default function promiseMiddleware({ dispatch, getState}) {
         : next(action);
     }
 
-    const SUCCESS = type;
-    const REQUEST = type + '_REQUEST';
-    const FAIL = type + '_FAIL';
+    const [REQUEST, SUCCESS, FAIL] = types;
 
     next({ ...rest, type: REQUEST });
     return promise

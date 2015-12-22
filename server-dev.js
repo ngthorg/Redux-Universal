@@ -1,6 +1,4 @@
-require("babel-core/register");
-require("babel-polyfill");
-
+require('babel/register')
 
 global.__DEV__ = true;
 

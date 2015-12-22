@@ -1,4 +1,3 @@
-'use strict';
 
 function isFunc(func) {
   return func && typeof func === 'function';

@@ -1,4 +1,3 @@
-'use strict'
 
 export default {
   CLIENT: typeof window !== 'undefined',

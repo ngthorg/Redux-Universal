@@ -28,7 +28,7 @@ export default class Counter extends React.Component {
 
   render() {
 		const { params: { name }, github } = this.props
-		const user = github.users[name]
+		const user = github.getIn(['users', name])
 
 		if(!user) {
 			return <Loading />
@@ -38,7 +38,7 @@ export default class Counter extends React.Component {
       <div className='container'>
 	      <DocumentMeta {...meta} />
         <h4 className="text-center">User github!</h4>
-				{user.login}
+				{user.get('login')}
         <div className="text-center">
         	<Link to="/">go Home!</Link>
         </div>

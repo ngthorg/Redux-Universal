@@ -1,4 +1,5 @@
-require('babel/register')
+require('babel-core/register')
+require("babel-polyfill")
 
 global.__DEV__ = false;
 
@@ -7,7 +8,7 @@ const webpack = require('webpack')
 const compress = require('compression')
 const cookieParser = require('cookie-parser')
 const app = express();
-const render = require('server');
+const render = require('server').default;
 const port = process.env.PORT || 3000;
 
 

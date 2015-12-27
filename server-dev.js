@@ -1,4 +1,5 @@
-require('babel/register')
+require('babel-core/register')
+require("babel-polyfill")
 
 global.__DEV__ = true;
 
@@ -9,7 +10,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const webpackConfig = require('./webpack.config-dev')
 const app = express();
-const render = require('server');
+const render = require('server').default;
 const port = process.env.PORT || 3000;
 
 const compiler = webpack(webpackConfig)

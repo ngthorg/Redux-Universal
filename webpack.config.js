@@ -27,8 +27,13 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         query: {
-          optional: [ 'runtime' ],
-          stage: 0,
+          presets: ["es2015", "react", "stage-0"],
+          plugins: [
+            ['syntax-async-functions'],
+            ['transform-class-properties'],
+            ['transform-decorators-legacy'],
+            ['transform-object-rest-spread']
+          ]
         }
       },{
         test: /\.(sass|scss|css)$/,

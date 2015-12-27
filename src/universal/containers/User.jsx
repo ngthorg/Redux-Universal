@@ -13,9 +13,9 @@ const meta = {
 @prepareRoute(async function ({store, params, location}) {
 	const { name } = params;
 
-	return await * [
+	return await Promise.all([
 		store.dispatch(getUser(name, ['login']))
-	]
+	])
 })
 
 @connect(state => {

@@ -13,7 +13,7 @@ const render = require('server');
 const port = process.env.PORT || 3000;
 
 const compiler = webpack(webpackConfig)
-app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }))
+app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath, stats: { colors: true }}))
 app.use(webpackHotMiddleware(compiler))
 
 app.use(cookieParser());

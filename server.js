@@ -1,39 +1,38 @@
 require('babel/register')
 
-global.__DEV__ = false;
+global.__DEV__ = false
 
 const express = require('express')
-const webpack = require('webpack')
 const compress = require('compression')
 const cookieParser = require('cookie-parser')
-const app = express();
-const render = require('server');
-const port = process.env.PORT || 3000;
+const app = express()
+const render = require('server')
+const port = process.env.PORT || 3000
 
 
-app.use(cookieParser());
-app.use(compress());
-app.use(express.static(__dirname + "/public", {maxage: 8640000}));
+app.use(cookieParser())
+app.use(compress())
+app.use(express.static(__dirname + '/public', { maxage: 8640000 }))
 
 
-app.get("*", render)
+app.get('*', render)
 
 
-app.use(function(req, res, next) {
-  var err = new Error('Not Found!');
-  err.status = 404;
-  next(err);
+app.use(function (req, res, next) {
+  const err = new Error('Not Found!')
+  err.status = 404
+  next(err)
 })
 
-app.use(function(err, req, res, next) {
-  var status = err.status || 500;
-  res.status(status);
+app.use(function (err, req, res) {
+  const status = err.status || 500
+  res.status(status)
 	err.status
 		? res.send(err.message)
-		: res.send('Internal server error');
+		: res.send('Internal server error')
 })
 
-app.listen(port, function(error) {
+app.listen(port, function (error) {
   if (error) {
     console.error(error)
   } else {

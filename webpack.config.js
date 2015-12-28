@@ -1,6 +1,6 @@
-var path = require('path')
-var webpack = require('webpack')
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const sassLoaders = [
   'css-loader',
@@ -10,15 +10,15 @@ const sassLoaders = [
 
 module.exports = {
   entry: [
-    './src/client/index.js',
+    './src/client/index.js'
   ],
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'js/bundle.js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.sass', '.scss', '.css'],
-    modulesDirectories: ['src', 'node_modules']
+    extensions: [ '', '.js', '.jsx', '.sass', '.scss', '.css' ],
+    modulesDirectories: [ 'src', 'node_modules' ]
   },
   module: {
     loaders: [
@@ -28,24 +28,24 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           optional: [ 'runtime' ],
-          stage: 0,
+          stage: 0
         }
       },{
         test: /\.(sass|scss|css)$/,
         loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'), {
-					publicPath: "/"
+					publicPath: '/'
 				})
       },{
 				test: /\.(png|jpg|jpeg|gif)$/,
-				loader: "url-loader?limit=10240"
+				loader: 'url-loader?limit=10240'
 			},{
 				test: /\.(eot|woff2|woff|ttf|svg)$/,
-				loader: "url-loader"
+				loader: 'url-loader'
 			}
     ]
   },
   plugins: [
-    new ExtractTextPlugin("css/style.css"),
+    new ExtractTextPlugin('css/style.css'),
     new webpack.DefinePlugin({
       '__DEV__': false,
       'process.env': {

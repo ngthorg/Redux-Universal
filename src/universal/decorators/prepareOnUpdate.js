@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import shallowEqual from 'react-redux/lib/utils/shallowEqual'
 
 
-function mapParams (paramKeys, params) {
+function mapParams(paramKeys, params) {
   return paramKeys.reduce((acc, key) => {
     return Object.assign({}, acc, { [key]: params[key] })
   }, {})
@@ -18,34 +18,39 @@ export default function prepareRoute(paramKeys, prepareFn) {
       store: PropTypes.object.isRequired
     }
 
+    static propTypes = {
+      location: PropTypes.object.isRequired,
+      params: PropTypes.object.isRequired
+    }
+
     componentDidMount() {
       const {
         context: { store },
         props: { params, location }
-      } = this;
+      } = this
 
-      prepareFn({ store, params: mapParams(paramKeys, params), location });
+      prepareFn({ store, params: mapParams(paramKeys, params), location })
     }
 
     componentDidUpdate(prevProps) {
       const {
         context: { store },
         props: { location }
-      } = this;
+      } = this
       const params = mapParams(paramKeys, this.props.params)
       const prevParams = mapParams(paramKeys, prevProps.params)
 
       if (!shallowEqual(params, prevParams)) {
-        prepareFn({ store, params, location });
+        prepareFn({ store, params, location })
       }
     }
 
     render() {
       return (
         <DecoratedComponent {...this.props} />
-      );
+      )
     }
 
-  };
+  }
 
 }

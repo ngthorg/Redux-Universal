@@ -5,7 +5,8 @@ import {
 import assign from 'lodash/object/assign'
 
 const initialState = {
-	clicked: 0
+	clicked: 0,
+	test: 0
 }
 
 export default function counter(state = initialState, action) {

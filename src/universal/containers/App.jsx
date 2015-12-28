@@ -1,11 +1,14 @@
 import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
 
 
 export default class App extends React.Component {
 
+  static propTypes = {
+    children: PropTypes.node.isRequired
+  }
+
   static contextTypes = {
-  	history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired
   }
 
   render() {

@@ -12,10 +12,10 @@ import routers from 'universal/routers'
 import Reducers from 'universal/reducers'
 
 
-const history = new createBrowserHistory();
-const initialState = JSON.parse(window.__INITIAL_STATE__);
+const history = new createBrowserHistory()
+const initialState = JSON.parse(window.__INITIAL_STATE__)
 
-let finalCreateStore;
+let finalCreateStore
 if(__DEV__) {
 	finalCreateStore = compose(
 		applyMiddleware(promiseMiddleware, createLogger()))(
@@ -24,17 +24,17 @@ if(__DEV__) {
 		 * https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
 		 */
 		window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore
-	);
+	)
 } else {
 	finalCreateStore = compose(
 		applyMiddleware(promiseMiddleware)
 	)(createStore)
 }
 
-const store = finalCreateStore(Reducers, initialState);
-const routes = routers(store);
+const store = finalCreateStore(Reducers, initialState)
+const routes = routers(store)
 
-syncReduxAndRouter(history, store);
+syncReduxAndRouter(history, store)
 
 render(
 	<Provider store={store}>

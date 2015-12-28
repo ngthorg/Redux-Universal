@@ -7,6 +7,11 @@ export default function prepareRoute(prepareFn) {
 
     static prepareRoute = prepareFn
 
+    static propTypes = {
+      location: PropTypes.object.isRequired,
+      params: PropTypes.object.isRequired
+    }
+
     static contextTypes = {
       store: PropTypes.object.isRequired
     }
@@ -15,17 +20,17 @@ export default function prepareRoute(prepareFn) {
       const {
         context: { store },
         props: { params, location }
-      } = this;
+      } = this
 
-      prepareFn({ store, params, location });
+      prepareFn({ store, params, location })
     }
 
     render() {
       return (
         <DecoratedComponent {...this.props} />
-      );
+      )
     }
 
-  };
+  }
 
 }

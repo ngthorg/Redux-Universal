@@ -1,0 +1,56 @@
+{
+  "extends": ["airbnb", "rackt"],
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "__DEV__": true
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "rules": {
+    // Ignore Rules
+    "indent": 0,
+    "no-mixed-spaces-and-tabs": 0,
+    "strict": 0,
+
+    // Plugin rules
+    "react/display-name": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-boolean-value": [1, "never"],
+    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-curly-spacing": [1, "never"],
+    "react/jsx-handler-names": 1,
+    "react/jsx-indent-props": 0,
+    "react/jsx-key": 1,
+    "react/jsx-max-props-per-line": [1, {"maximum": 4}],
+    "react/jsx-no-bind": 0,
+    "react/jsx-no-duplicate-props": 1,
+    "react/jsx-no-literals": 0,
+    "react/jsx-no-undef": 1,
+    "react/jsx-pascal-case": 1,
+    "react/jsx-quotes": [1, "double", "avoid-escape"],
+    "react/jsx-sort-prop-types": [1, {"callbacksLast": true, "ignoreCase": true}],
+    "react/jsx-sort-props": 0,
+    "react/jsx-uses-react": 1,
+    "react/no-danger": 0,
+    "react/no-deprecated": 0,
+    "react/no-did-mount-set-state": 2,
+    "react/no-did-update-set-state": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/no-is-mounted": 0,
+    "react/no-multi-comp": 1,
+    "react/no-string-refs": 0,
+    "react/no-unknown-property": 2,
+    "react/prop-types": 1,
+    "react/react-in-jsx-scope": 1,
+    "react/self-closing-comp": 1,
+    "react/wrap-multilines": 1
+  }
+}

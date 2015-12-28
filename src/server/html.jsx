@@ -5,12 +5,12 @@ import DocumentMeta from 'react-document-meta'
 export default class Html extends React.Component {
 
   static propTypes = {
-    state: PropTypes.string.isRequired,
-    markup: PropTypes.string.isRequired
+    markup: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired
   }
 
   render() {
-    const {state, markup} = this.props;
+    const { state, markup } = this.props
     return (
       <html lang="en">
         <head>
@@ -18,18 +18,22 @@ export default class Html extends React.Component {
           {DocumentMeta.renderAsReact()}
           <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 64x64 128x128 256x256" />
           {!__DEV__ && (
-            <link rel="stylesheet" type="text/css" href="/css/style.css" />
+            <link
+              rel="stylesheet"
+              type="text/css"
+              href="/css/style.css"
+            />
           )}
         </head>
         <body>
 
-          <div id="main" dangerouslySetInnerHTML={{__html: markup}}></div>
+          <div id="main" dangerouslySetInnerHTML={{ __html: markup }} />
 
-          <script dangerouslySetInnerHTML={{__html: `window.__INITIAL_STATE__=${state};`}} />
-          <script src="/js/bundle.js"></script>
+          <script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__=${state};` }} />
+          <script src="/js/bundle.js" />
         </body>
       </html>
-    );
+    )
   }
 
 }

@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import Loading from 'universal/components/Loading'
 
 
-describe("components: <Loading />", () => {
+describe('components: <Loading />', () => {
 
 	it("renders an '.progress-bar'", () => {
     const wrapper = shallow(<Loading />)

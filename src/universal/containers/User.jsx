@@ -6,25 +6,26 @@ import { prepareRoute } from 'universal/decorators'
 import { getUser } from 'universal/actions/github'
 import Loading from 'universal/components/Loading'
 
-const meta = {
-	title: "Counter!"
-};
+let meta = { title: 'Counter' }
 
-@prepareRoute(async function ({store, params, location}) {
-	const { name } = params;
+@prepareRoute(async function ({ store, params }) {
+	const { name } = params
 
 	return await * [
-		store.dispatch(getUser(name, ['login']))
+		store.dispatch(getUser(name, [ 'login' ]))
 	]
 })
 
-@connect(state => {
-	return {
-		github: state.github
-	}
-})
+@connect(state => ({
+	github: state.github
+}))
 
 export default class Counter extends React.Component {
+
+	static propTypes = {
+		github: PropTypes.object.isRequired,
+		params: PropTypes.object.isRequired
+	}
 
   render() {
 		const { params: { name }, github } = this.props
@@ -35,15 +36,15 @@ export default class Counter extends React.Component {
 		}
 
     return (
-      <div className='container'>
-	      <DocumentMeta {...meta} />
+      <div className="container">
+				<DocumentMeta {...meta} />
         <h4 className="text-center">User github!</h4>
 				{user.login}
         <div className="text-center">
-        	<Link to="/">go Home!</Link>
-        </div>
+					<Link to="/">go Home!</Link>
+				</div>
       </div>
-    );
+    )
   }
 
 }

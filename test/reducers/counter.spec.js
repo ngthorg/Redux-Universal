@@ -7,7 +7,7 @@ describe('reducers: counter', () => {
 
 	it('action INCREMENT_COUNTER', () => {
     expect(
-      counter({clicked: 0}, {
+      counter({ clicked: 0 }, {
         type: types.INCREMENT_COUNTER
       })
     ).toEqual({
@@ -17,7 +17,7 @@ describe('reducers: counter', () => {
 
 	it('action DECREMENT_COUNTER', () => {
 		expect(
-      counter({clicked: 1}, {
+      counter({ clicked: 1 }, {
         type: types.DECREMENT_COUNTER
       })
     ).toEqual({

@@ -30,9 +30,7 @@ module.exports = {
           presets: ["es2015", "react", "stage-0"],
           plugins: [
             ['syntax-async-functions'],
-            ['transform-class-properties'],
-            ['transform-decorators-legacy'],
-            ['transform-object-rest-spread']
+            ['transform-decorators-legacy']
           ]
         }
       },{

@@ -27,9 +27,7 @@ module.exports = {
           plugins: [
             ['transform-runtime'],
             ['syntax-async-functions'],
-            ['transform-class-properties'],
             ['transform-decorators-legacy'],
-            ['transform-object-rest-spread'],
             [ 'react-transform',
               { transforms: [
                   {

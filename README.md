@@ -5,7 +5,7 @@ Sample Universal (isomorphic) using React and Redux.
 
 ### Installation
 ```
-$ [sudo] npm i -g webpack babel@5.x.x
+$ [sudo] npm i -g webpack babel-cli
 $ npm i
 ```
 

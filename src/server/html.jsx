@@ -18,11 +18,7 @@ export default class Html extends React.Component {
           {DocumentMeta.renderAsReact()}
           <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 64x64 128x128 256x256" />
           {!__DEV__ && (
-            <link
-              rel="stylesheet"
-              type="text/css"
-              href="/css/style.css"
-            />
+            <link rel="stylesheet" type="text/css" href="/css/style.css" />
           )}
         </head>
         <body>

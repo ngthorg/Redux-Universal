@@ -1,5 +1,4 @@
 {
-  "extends": ["airbnb", "rackt"],
   "parser": "babel-eslint",
   "plugins": [
     "react"
@@ -7,6 +6,7 @@
   "globals": {
     "__DEV__": true
   },
+  "extends": ["rackt"],
   "env": {
     "es6": true,
     "node": true
@@ -19,6 +19,7 @@
     "indent": 0,
     "no-mixed-spaces-and-tabs": 0,
     "strict": 0,
+    "no-console": 1,
 
     // Plugin rules
     "react/display-name": 0,

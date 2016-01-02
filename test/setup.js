@@ -1,1 +1,1 @@
-require('babel/register')
+import 'babel-polyfill'

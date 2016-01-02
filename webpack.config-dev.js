@@ -23,26 +23,22 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         query: {
-          optional: [ 'runtime' ],
-          stage: 0,
-          env: {
-            development: {
-              plugins: [
-                'react-transform'
-              ],
-              extra: {
-                'react-transform': {
-                  transforms: [
-                    {
-                      transform:  'react-transform-hmr',
-                      imports: [ 'react' ],
-                      locals:  [ 'module' ]
-                    }
-                  ]
-                }
+          presets: [ 'es2015', 'react', 'stage-0' ],
+          plugins: [
+            [ 'transform-runtime' ],
+            [ 'syntax-async-functions' ],
+            [ 'transform-decorators-legacy' ],
+            [ 'react-transform',
+              { transforms: [
+                  {
+                    transform: 'react-transform-hmr',
+                    imports: [ 'react' ],
+                    locals: [ 'module' ]
+                  }
+                ]
               }
-            }
-          }
+            ]
+          ]
         }
       },{
         test: /\.(sass|scss|css)$/,

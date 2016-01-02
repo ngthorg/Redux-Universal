@@ -11,9 +11,9 @@ let meta = { title: 'Counter' }
 @prepareRoute(async function ({ store, params }) {
 	const { name } = params
 
-	return await * [
+	return await Promise.all([
 		store.dispatch(getUser(name, [ 'login' ]))
-	]
+	])
 })
 
 @connect(state => ({

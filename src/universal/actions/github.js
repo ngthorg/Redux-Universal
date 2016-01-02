@@ -18,9 +18,9 @@ function fetchUser(login) {
 
 export function getUser(login, requiredFields = []) {
 	return (dispatch, getState) => {
-		const user = getState().github.users[login]
+		const user = getState().github.getIn([ 'users', login ])
 
-		if(user && requiredFields.every(key => user.hasOwnProperty(key))) {
+		if(user && requiredFields.every(key => user.has(key))) {
 			return null
 		}
 

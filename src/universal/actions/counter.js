@@ -2,7 +2,6 @@ import {
 	INCREMENT_COUNTER
 	, DECREMENT_COUNTER
 } from 'universal/actions/actionsTypes'
-import { API_URL } from 'config'
 
 
 export function increment() {
@@ -21,7 +20,7 @@ export function incrementIfOdd() {
   return (dispatch, getState) => {
     const { counter } = getState()
 
-    if (counter.clicked % 2 === 0) {
+    if (counter.get('clicked') % 2 === 0) {
       return
     }
 

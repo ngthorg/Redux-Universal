@@ -19,6 +19,7 @@
     "indent": 0,
     "no-mixed-spaces-and-tabs": 0,
     "strict": 0,
+    "comma-dangle": 0,
     "no-console": 1,
 
     // Plugin rules

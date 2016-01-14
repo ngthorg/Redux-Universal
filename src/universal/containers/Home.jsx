@@ -16,7 +16,7 @@ class Home extends React.Component {
     increment: PropTypes.func.isRequired,
     incrementAsync: PropTypes.func.isRequired,
     incrementIfOdd: PropTypes.func.isRequired
-  }
+  };
 
   render() {
     const { counter, decrement, increment, incrementAsync, incrementIfOdd } = this.props

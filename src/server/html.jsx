@@ -7,7 +7,7 @@ export default class Html extends React.Component {
   static propTypes = {
     markup: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired
-  }
+  };
 
   render() {
     const { state, markup } = this.props

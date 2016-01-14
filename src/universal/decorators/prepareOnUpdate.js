@@ -12,16 +12,16 @@ export default function prepareRoute(paramKeys, prepareFn) {
 
   return DecoratedComponent => class PrepareRouteDecorator extends React.Component {
 
-    static prepareRoute = prepareFn
+    static prepareRoute = prepareFn;
 
     static contextTypes = {
       store: PropTypes.object.isRequired
-    }
+    };
 
     static propTypes = {
       location: PropTypes.object.isRequired,
       params: PropTypes.object.isRequired
-    }
+    };
 
     componentDidMount() {
       const {

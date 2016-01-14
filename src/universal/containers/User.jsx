@@ -25,7 +25,7 @@ export default class Counter extends React.Component {
 	static propTypes = {
 		github: PropTypes.object.isRequired,
 		params: PropTypes.object.isRequired
-	}
+	};
 
   render() {
 		const { params: { name }, github } = this.props

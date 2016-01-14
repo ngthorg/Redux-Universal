@@ -13,13 +13,13 @@ export default class NotFound extends React.Component {
 
 	static propTypes = {
 		dispatch: PropTypes.func.isRequired
-	}
+	};
 
 	constructor(props) {
 		super(props)
 	}
 
-	handleClick = () => {
+	handleClick() {
 		const { dispatch } = this.props
 		dispatch(pushPath('/'))
 	}
@@ -30,7 +30,7 @@ export default class NotFound extends React.Component {
 				<DocumentMeta {...meta} />
         <h4 className="text-center">404 Not Found!</h4>
         <div className="text-center">
-					<button type="button" onClick={this.handleClick} className="btn btn-primary-outline btn-sm">Go Home!</button>
+					<button type="button" onClick={this.handleClick.bind(this)} className="btn btn-primary-outline btn-sm">Go Home!</button>
         </div>
       </div>
     )

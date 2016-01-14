@@ -2,7 +2,6 @@ import {
 	INCREMENT_COUNTER
 	, DECREMENT_COUNTER
 } from 'universal/actions/actionsTypes'
-import { API_URL } from 'config'
 
 
 export function increment() {

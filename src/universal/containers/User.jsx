@@ -39,7 +39,8 @@ export default class Counter extends React.Component {
       <div className="container">
 				<DocumentMeta {...meta} />
         <h4 className="text-center">User github!</h4>
-				{user.get('login')}
+				<p>{user.get('login')}</p>
+				<img src={user.get('avatar_url')} style={{ width: '50px', height: '50px' }} />
         <div className="text-center">
 					<Link to="/">go Home!</Link>
 				</div>

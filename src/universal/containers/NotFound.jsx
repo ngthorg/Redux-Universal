@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import DocumentMeta from 'react-document-meta'
-import { pushPath } from 'redux-simple-router'
+import { routeActions } from 'react-router-redux'
 
 
 const meta = { title: '404 Not Found!' }
@@ -21,7 +21,7 @@ export default class NotFound extends React.Component {
 
 	handleClick() {
 		const { dispatch } = this.props
-		dispatch(pushPath('/'))
+		dispatch(routeActions.push('/'))
 	}
 
   render() {
@@ -30,7 +30,7 @@ export default class NotFound extends React.Component {
 				<DocumentMeta {...meta} />
         <h4 className="text-center">404 Not Found!</h4>
         <div className="text-center">
-					<button type="button" onClick={this.handleClick.bind(this)} className="btn btn-primary-outline btn-sm">Go Home!</button>
+					<button type="button" onClick={::this.handleClick} className="btn btn-primary-outline btn-sm">Go Home!</button>
         </div>
       </div>
     )

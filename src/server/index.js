@@ -1,6 +1,6 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import { RoutingContext, match } from 'react-router'
+import { RouterContext, match } from 'react-router'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import serialize from 'serialize-javascript'
@@ -50,7 +50,7 @@ export default async function (req, res, next) {
 
       const body = renderToString(
         <Provider store={store}>
-          <RoutingContext {...routerState} />
+          <RouterContext {...routerState} />
         </Provider>
       )
 

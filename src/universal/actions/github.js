@@ -7,7 +7,7 @@ import {
 import { API_URL } from 'config'
 
 
-function fetchUser(login) {
+export function fetchUser(login) {
 	return {
 		types: [ GET_USER_REQUEST, GET_USER_SUCCESS, GET_USER_FAIL ]
 		, promise: Axios.get(`${API_URL}/users/${login}`)

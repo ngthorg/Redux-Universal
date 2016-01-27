@@ -96,7 +96,7 @@ $body-color:                 $gray-dark !default;
 $link-color:                 $brand-primary !default;
 $link-decoration:            none !default;
 $link-hover-color:           darken($link-color, 15%) !default;
-$link-hover-decoration:      underline !default;
+$link-hover-decoration:      none !default;
 
 
 // Grid breakpoints
@@ -176,7 +176,7 @@ $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
 $headings-font-family:       inherit !default;
-$headings-font-weight:       500 !default;
+$headings-font-weight:       400 !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;
 

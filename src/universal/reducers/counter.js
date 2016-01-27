@@ -1,7 +1,7 @@
 import {
 	INCREMENT_COUNTER
 	, DECREMENT_COUNTER
-} from 'universal/actions/actionsTypes'
+} from 'universal/constants/ActionTypes'
 import Immutable from 'immutable'
 
 

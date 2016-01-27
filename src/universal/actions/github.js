@@ -3,7 +3,7 @@ import {
 	GET_USER_REQUEST
 	, GET_USER_SUCCESS
 	, GET_USER_FAIL
-} from 'universal/actions/actionsTypes'
+} from 'universal/constants/ActionTypes'
 import { API_URL } from 'config'
 
 

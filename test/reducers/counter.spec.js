@@ -1,6 +1,6 @@
 import expect from 'expect'
 import counter from 'universal/reducers/counter'
-import * as types from 'universal/actions/actionsTypes'
+import * as types from 'universal/constants/ActionTypes'
 import { fromJS } from 'immutable'
 
 

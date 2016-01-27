@@ -2,7 +2,7 @@ import expect from 'expect'
 import { fromJS } from 'immutable'
 import configureMockStore from 'redux-mock-store'
 import * as counterActions from 'universal/actions/counter'
-import * as types from 'universal/actions/actionsTypes'
+import * as types from 'universal/constants/ActionTypes'
 import promiseMiddleware from 'universal/lib/promiseMiddleware'
 
 const middlewares = [ promiseMiddleware ]

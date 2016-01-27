@@ -1,6 +1,6 @@
 import expect from 'expect'
 import github from 'universal/reducers/github'
-import * as types from 'universal/actions/actionsTypes'
+import * as types from 'universal/constants/ActionTypes'
 import { fromJS } from 'immutable'
 
 

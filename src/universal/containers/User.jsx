@@ -8,7 +8,7 @@ import Loading from 'universal/components/Loading'
 
 let meta = { title: 'Counter' }
 
-@prepareRoute(async function ({ store, params }) {
+@prepareRoute(async ({ store, params }) => {
 	const { name } = params
 
 	return await Promise.all([
@@ -26,6 +26,13 @@ export default class UserContainer extends React.Component {
 		github: PropTypes.object.isRequired,
 		params: PropTypes.object.isRequired
 	};
+
+	componentWillReceiveProps(nextProps) {
+		if (this.props.params !== nextProps.params) {
+			const { dispatch, params: { name } } = nextProps
+			dispatch(getUser(name, [ 'login' ]))
+		}
+	}
 
   render() {
 		const { params: { name }, github } = this.props

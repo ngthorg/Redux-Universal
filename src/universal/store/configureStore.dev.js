@@ -11,10 +11,8 @@ const reduxRouterMiddleware = syncHistory(browserHistory)
 const finalCreateStore = compose(
   applyMiddleware(promiseMiddleware, reduxRouterMiddleware, createLogger({
 		// development using redux-logger with Immutable
-		stateTransformer: (state) => {
-			return fromJS(state).toJS()
-		}
-	})))(
+    stateTransformer: state => fromJS(state).toJS()
+  })))(
     /**
      * using redux-devtools-extension
      * https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd

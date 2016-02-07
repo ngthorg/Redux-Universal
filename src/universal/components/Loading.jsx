@@ -1,12 +1,14 @@
 import React from 'react'
 
 
-export default class Loading extends React.Component {
-
-	render() {
-		return (
-			<div className="progress-bar" />
-		)
-	}
-
+function Loading() {
+  return (
+    <div className="progress-bar" />
+  )
 }
+
+// Loading.propTypes = {
+//   styles: React.PropTypes.object.isRequired
+// }
+
+export default Loading

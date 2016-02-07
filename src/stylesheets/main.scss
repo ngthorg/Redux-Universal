@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+
+// Sass utilities
+@import 'helpers/variables';
+@import 'helpers/functions';
+@import 'helpers/mixins';
+@import 'helpers/placeholders';
+
+// Vendors and external stylesheets
+@import 'vendors/bootstrap/index';
+
+// base stuff
+@import 'base/base';
+
+// Layout related stylesheets
+@import 'layout/header';
+
+// Components and modules
+@import 'components/container';
+@import 'components/loading';
+@import 'components/imgSlider';
+@import 'components/navbar';
+
+// Page-specific stylesheets
+@import 'pages/home';

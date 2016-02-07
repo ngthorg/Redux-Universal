@@ -6,10 +6,10 @@ import github from 'universal/reducers/github'
 
 
 const rootReducer = combineReducers({
-	routing: routeReducer
-	, form: formReducer
-	, counter: counter
-	, github: github
+  routing: routeReducer,
+  form: formReducer,
+  counter,
+  github
 })
 
 export default rootReducer

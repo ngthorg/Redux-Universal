@@ -23,7 +23,7 @@
 // Generating :before or :after pseudo-element shapes
 
 @mixin p-el($el, $el-w: null, $el-h: null)
-	@if $el == "before" or $el == "after"
+	@if ($el == "before" or $el == "after")
 	  &:#{$el}
 		  @extend %pseudos
 		  width: $el-w
@@ -40,3 +40,9 @@
 	width: $w
 	height: $h
 	display: $disp
+
+@mixin transition-all($duration: null, $timing: null)
+	@extend %transition
+	transition-property: all
+	transition-duration: $duration
+	transition-timing-function: $timing

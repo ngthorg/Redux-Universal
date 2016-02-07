@@ -5,8 +5,7 @@ import { fromJS } from 'immutable'
 
 
 describe('reducers: counter', () => {
-
-	it('action INCREMENT_COUNTER', () => {
+  it('action INCREMENT_COUNTER', () => {
     expect(
       counter(fromJS({ clicked: 0 }), {
         type: types.INCREMENT_COUNTER
@@ -14,16 +13,15 @@ describe('reducers: counter', () => {
     ).toEqual(fromJS({
       clicked: 1
     }))
-	})
+  })
 
-	it('action DECREMENT_COUNTER', () => {
-		expect(
-			counter(fromJS({ clicked: 1 }), {
+  it('action DECREMENT_COUNTER', () => {
+    expect(
+      counter(fromJS({ clicked: 1 }), {
         type: types.DECREMENT_COUNTER
       })
     ).toEqual(fromJS({
       clicked: 0
     }))
-	})
-
+  })
 })

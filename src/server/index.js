@@ -15,51 +15,55 @@ export default async function (req, res, next) {
   const store = finalCreateStore(Reducers, {})
 
 
-  match({ routes: routers(store), location: req.url }, async (err, redirectLocation, routerState) => {
-    try {
-      if (err) {
-        throw err
-      }
-
-      /**
-       * if Redirect "chuyển hướng"
-       * @param  {redirectLocation} object redirect
-       */
-      if(redirectLocation) {
-        res.redirect(302, redirectLocation.pathname + redirectLocation.search)
-        return
-      }
-
-      /**
-       * if name Router NotFound
-       * render page 404 NotFound
-       */
-      if (routerState.routes[1].name === 'NotFound') {
-        res.status(404)
-      }
-
-      const { params, location } = routerState
-      const prepareRouteMethods = routerState.components.map(component => component.prepareRoute)
-      for(const prepareRoute of prepareRouteMethods) {
-        if (!prepareRoute) {
-          continue
+  match({ routes: routers(store), location: req.url },
+    async (err, redirectLocation, routerState) => {
+      try {
+        if (err) {
+          throw err
         }
 
-        await prepareRoute({ store, params, location })
+        /**
+         * if Redirect "chuyển hướng"
+         * @param  {redirectLocation} object redirect
+         */
+        if (redirectLocation) {
+          res.redirect(302, redirectLocation.pathname + redirectLocation.search)
+          return
+        }
+
+        /**
+         * if name Router NotFound
+         * render page 404 NotFound
+         */
+        if (routerState.routes[1].name === 'NotFound') {
+          res.status(404)
+        }
+
+        const { params, location } = routerState
+        const prepareRouteMethods = routerState.components.map(component => component.prepareRoute)
+        for (const prepareRoute of prepareRouteMethods) {
+          if (!prepareRoute) {
+            continue
+          }
+
+          await prepareRoute({ store, params, location })
+        }
+
+        const body = renderToString(
+          <Provider store={store}>
+            <RouterContext {...routerState} />
+          </Provider>
+        )
+
+        const initialState = store.getState()
+        const html = renderToString(
+          <HtmlComponent markup={body} state={serialize(JSON.stringify(initialState))} />
+        )
+
+        res.send(`<!DOCTYPE html>` + html)
+      } catch (err) {
+        next(err)
       }
-
-      const body = renderToString(
-        <Provider store={store}>
-          <RouterContext {...routerState} />
-        </Provider>
-      )
-
-      const initialState = store.getState()
-      const html = renderToString(<HtmlComponent markup={body} state={serialize(JSON.stringify(initialState))} />)
-
-			res.send(`<!DOCTYPE html>` + html)
-    } catch(err) {
-      next(err)
     }
-  })
+  )
 }

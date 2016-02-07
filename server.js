@@ -19,21 +19,23 @@ app.use(express.static(__dirname + '/public', { maxage: 8640000 }))
 app.get('*', render)
 
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   const err = new Error('Not Found!')
   err.status = 404
   next(err)
 })
 
-app.use(function (err, req, res) {
+app.use((err, req, res) => {
   const status = err.status || 500
   res.status(status)
-	err.status
-		? res.send(err.message)
-		: res.send('Internal server error')
+  if (err.status) {
+    res.send(err.message)
+  } else {
+    res.send('Internal server error')
+  }
 })
 
-app.listen(port, function (error) {
+app.listen(port, (error) => {
   if (error) {
     console.error(error)
   } else {

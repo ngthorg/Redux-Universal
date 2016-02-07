@@ -17,8 +17,8 @@ module.exports = {
     filename: 'js/bundle.js'
   },
   resolve: {
-    extensions: [ '', '.js', '.jsx', '.sass', '.scss', '.css' ],
-    modulesDirectories: [ 'src', 'node_modules' ]
+    extensions: ['', '.js', '.jsx', '.sass', '.scss', '.css'],
+    modulesDirectories: ['src', 'node_modules']
   },
   module: {
     loaders: [
@@ -27,38 +27,35 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         query: {
-          presets: [ 'es2015', 'react', 'stage-0' ],
-          plugins: [
-            [ 'syntax-async-functions' ],
-            [ 'transform-decorators-legacy' ]
-          ]
+          presets: ['es2015', 'react', 'stage-0'],
+          plugins: ['syntax-async-functions', 'transform-decorators-legacy']
         }
-      },{
+      }, {
         test: /\.(sass|scss|css)$/,
         loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'), {
-					publicPath: '/'
-				})
-      },{
-				test: /\.(png|jpg|jpeg|gif)$/,
-				loader: 'url-loader?limit=10240'
-			},{
-				test: /\.(eot|woff2|woff|ttf|svg)$/,
-				loader: 'url-loader'
-			}
+          publicPath: '/'
+        })
+      }, {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        loader: 'url-loader?limit=10240'
+      }, {
+        test: /\.(eot|woff2|woff|ttf|svg)$/,
+        loader: 'url-loader'
+      }
     ]
   },
   plugins: [
     new ExtractTextPlugin('css/style.css'),
     new webpack.DefinePlugin({
-      '__DEV__': false,
+      __DEV__: false,
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        NODE_ENV: JSON.stringify('production')
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-			minimize: true,
-			compress: { warnings: false },
-			output: { comments: false }
-		})
+      minimize: true,
+      compress: { warnings: false },
+      output: { comments: false }
+    })
   ]
 }

@@ -13,7 +13,7 @@ export default function promiseMiddleware({ dispatch, getState }) {
         : next(action)
     }
 
-    const [ REQUEST, SUCCESS, FAIL ] = types
+    const [REQUEST, SUCCESS, FAIL] = types
 
     next({ ...rest, type: REQUEST })
     return promise

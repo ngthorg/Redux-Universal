@@ -20,6 +20,7 @@ export default class Html extends React.Component {
           {!__DEV__ && (
             <link rel="stylesheet" type="text/css" href="/css/style.css" />
           )}
+          <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
         </head>
         <body>
 

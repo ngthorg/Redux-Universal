@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react'
 
 
 export default function prepareRoute(prepareFn) {
-
   return DecoratedComponent => class PrepareRouteDecorator extends React.Component {
 
     static prepareRoute = prepareFn;
@@ -32,5 +31,4 @@ export default function prepareRoute(prepareFn) {
     }
 
   }
-
 }

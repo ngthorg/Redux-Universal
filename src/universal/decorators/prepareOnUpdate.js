@@ -3,13 +3,10 @@ import shallowEqual from 'react-redux/lib/utils/shallowEqual'
 
 
 function mapParams(paramKeys, params) {
-  return paramKeys.reduce((acc, key) => {
-    return Object.assign({}, acc, { [key]: params[key] })
-  }, {})
+  return paramKeys.reduce((acc, key) => Object.assign({}, acc, { [key]: params[key] }), {})
 }
 
 export default function prepareRoute(paramKeys, prepareFn) {
-
   return DecoratedComponent => class PrepareRouteDecorator extends React.Component {
 
     static prepareRoute = prepareFn;
@@ -52,5 +49,4 @@ export default function prepareRoute(paramKeys, prepareFn) {
     }
 
   }
-
 }

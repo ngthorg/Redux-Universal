@@ -2,7 +2,7 @@ import { fromJS } from 'immutable'
 
 
 export default function immutifyState(obj) {
-  let objMut = Object.assign({}, obj)
+  const objMut = Object.assign({}, obj)
 
   Object
     .keys(objMut)

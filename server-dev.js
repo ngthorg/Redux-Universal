@@ -15,7 +15,11 @@ const render = require('server').default
 const port = process.env.PORT || 3000
 
 const compiler = webpack(webpackConfig)
-app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath, stats: { colors: true } }))
+app.use(webpackDevMiddleware(compiler, {
+  noInfo: true,
+  publicPath: webpackConfig.output.publicPath,
+  stats: { colors: true }
+}))
 app.use(webpackHotMiddleware(compiler))
 
 app.use(cookieParser())
@@ -23,22 +27,22 @@ app.use(cookieParser())
 app.get('*', render)
 
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   const err = new Error('Not Found!')
   err.status = 404
   next(err)
 })
 
-app.use(function (err, req, res) {
+app.use((err, req, res) => {
   const status = err.status || 500
   res.status(status)
   res.json({
     message: err.message,
-    status: status
+    status
   })
 })
 
-app.listen(port, function (error) {
+app.listen(port, (error) => {
   if (error) {
     console.error(error)
   } else {

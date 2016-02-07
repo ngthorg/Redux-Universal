@@ -16,8 +16,8 @@ const store = configureStore(initialState)
 const routes = routers(store)
 
 render(
-	<Provider store={store}>
-  	<Router history={browserHistory} children={routes} />
+  <Provider store={store}>
+    <Router history={browserHistory} children={routes} />
   </Provider>
 	, document.querySelector('#main')
 )

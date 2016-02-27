@@ -23,6 +23,7 @@ const meta = { title: 'Counter' }
 }))
 
 export default class UserContainer extends React.Component {
+
   static propTypes = {
     github: PropTypes.object.isRequired,
     params: PropTypes.object.isRequired

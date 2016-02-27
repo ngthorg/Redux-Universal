@@ -1,0 +1,55 @@
+
+
+.checkout {
+  background: #fff;
+  @include e(section) {
+    @extend %centered;
+    @extend %clearfix;
+    width: 600px;
+    position: relative;
+    padding: 0 50px 50px 50px;
+    margin-bottom: -25px;
+    @include e(title) {
+      color: #333;
+      font-size: 22px;
+      font-weight: 300;
+    }
+    @include e(number) {
+      @extend %center-aligin;
+      background: #fff;
+      border: 1px solid #f1f1f1;
+      color: #f1f1f1;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0px;
+      z-index: 1;
+      padding: em(4px);
+      transition: all .5s ease-in;
+      @include m(focus) {
+        border: 1px solid $brand-info;
+        color: $brand-info;
+      }
+      @include m(check) {
+        background: url(https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/signup-lite-check-gray@1x.d436fc89ff3cf7a29a0e06a9535a1f60.png) center center no-repeat #fff;
+        @include m(blue) {
+          background: url(https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/signup-lite-check-blue@1x.aa218f0f478e33cc4af79cb3b020f673.png) center center no-repeat #fff;
+        }
+      }
+    }
+    @include e(line) {
+      position: absolute;
+      top: 0;
+      left: 16px;
+      width: 32px;
+      height: 100%;
+      border-left: solid 1px #f1f1f1;
+      transition: all .5s ease-in;
+      @include m(done) {
+        border-left: solid 1px $brand-info;
+      }
+    }
+  }
+}

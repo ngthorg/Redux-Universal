@@ -4,6 +4,7 @@ import { routeActions } from 'react-router-redux'
 
 
 export default class Navbar extends React.Component {
+
   static contextTypes = {
     store: PropTypes.any.isRequired
   };
@@ -28,4 +29,5 @@ export default class Navbar extends React.Component {
       </nav>
     )
   }
+
 }

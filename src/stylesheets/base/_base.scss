@@ -1,0 +1,27 @@
+/**
+ * Base Style
+ */
+
+* {
+  outline-style: none !important;
+}
+
+body {
+  font-weight: $font-weight--medium;
+  background: url('./images/backslash.jpeg');
+  background-size: 100%;
+  font-family: sans-serif;
+}
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.container {
+  padding: em(20px);
+	@include m(margtop) {
+		margin-top: em(80px);
+  }
+}

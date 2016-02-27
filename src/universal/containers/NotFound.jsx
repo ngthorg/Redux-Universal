@@ -6,6 +6,7 @@ import { routeActions } from 'react-router-redux'
 const meta = { title: '404 Not Found!' }
 
 export default class NotFound extends React.Component {
+
   static contextTypes = {
     store: PropTypes.any.isRequired
   };

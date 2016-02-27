@@ -6,6 +6,7 @@ import shallowEqual from 'react-redux/lib/utils/shallowEqual'
 
 
 export default class Explore extends React.Component {
+
   static propTypes = {
     params: PropTypes.shape({
       text: PropTypes.string

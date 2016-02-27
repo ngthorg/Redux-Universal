@@ -15,6 +15,7 @@ import SearchAll from 'universal/components/SearchAll'
 }))
 
 export default class SearchAllContainer extends React.Component {
+
   static propTypes = {
     github: PropTypes.object.isRequired,
     params: PropTypes.shape({

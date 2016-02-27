@@ -4,6 +4,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes'
 
 
 export default class SearchAll extends React.Component {
+
   static propTypes = {
     user: ImmutablePropTypes.contains({
       login: PropTypes.string.isRequired,
@@ -28,4 +29,5 @@ export default class SearchAll extends React.Component {
       </div>
     )
   }
+
 }

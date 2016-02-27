@@ -1,10 +1,10 @@
 import React from 'react'
 import { expect } from 'chai'
-import { describeWithDOM, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import ImgSlider from 'universal/components/ImgSlider'
 
 
-describeWithDOM('components: <ImgSlider />', () => {
+describe('components: <ImgSlider />', () => {
   const images = [
     'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fefa5120099237.562e57c552241.jpg',
     'https://mir-s3-cdn-cf.behance.net/project_modules/disp/6d2c4b11613843.560fa91b30afb.jpg',

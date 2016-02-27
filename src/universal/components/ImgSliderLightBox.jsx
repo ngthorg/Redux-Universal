@@ -4,6 +4,7 @@ import classnames from 'classnames'
 
 
 export default class ImgSliderLightBox extends React.Component {
+
   static propTypes = {
     current: PropTypes.number.isRequired,
     handleHideLightBox: PropTypes.func.isRequired,
@@ -83,6 +84,5 @@ export default class ImgSliderLightBox extends React.Component {
       </div>
 		)
   }
-
 
 }

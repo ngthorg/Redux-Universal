@@ -1,10 +1,11 @@
 import React from 'react'
+import sinon from 'sinon'
 import { expect } from 'chai'
-import { describeWithDOM, mount, sinon } from 'enzyme'
+import { mount } from 'enzyme'
 import ImgSliderLightBox from 'universal/components/ImgSliderLightBox'
 
 
-describeWithDOM('components: <ImgSliderLightBox />', () => {
+describe('components: <ImgSliderLightBox />', () => {
   const images = [
     'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fefa5120099237.562e57c552241.jpg',
     'https://mir-s3-cdn-cf.behance.net/project_modules/disp/6d2c4b11613843.560fa91b30afb.jpg',

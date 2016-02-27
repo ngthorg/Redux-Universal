@@ -11,6 +11,7 @@ import Navbar from 'universal/components/Navbar'
 const meta = { title: 'Home' }
 
 class Home extends React.Component {
+
   static propTypes = {
     counter: PropTypes.object.isRequired,
     decrement: PropTypes.func.isRequired,
@@ -51,6 +52,7 @@ class Home extends React.Component {
             Increment async
           </button>
         </p>
+        <p><Link to="/form">Form</Link></p>
         <p><Link to="/user/ngthorg">ngthorg</Link></p>
         <p><Link to="/user/rackt">rackt</Link></p>
         <ImgSlider

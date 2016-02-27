@@ -8,6 +8,7 @@ import Explore from 'universal/components/Explore'
 const meta = { title: 'Search' }
 
 class Search extends React.Component {
+
   static propTypes = {
     children: PropTypes.any
   };

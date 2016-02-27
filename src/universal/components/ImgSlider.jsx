@@ -5,6 +5,7 @@ import ImgSliderLightBox from 'universal/components/ImgSliderLightBox'
 
 
 export default class ImgSlider extends React.Component {
+
   static propTypes = {
     images: PropTypes.arrayOf(
       PropTypes.string.isRequired

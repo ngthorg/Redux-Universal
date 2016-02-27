@@ -1,7 +1,7 @@
 ## React Redux Universal (isomorphic) example
 Sample Universal (isomorphic) using React and Redux.
 
-[![build status](https://img.shields.io/travis/rackt/redux/master.svg?style=flat-square)](https://travis-ci.org/ngthorg/Redux-Universal)
+[![Build Status](https://travis-ci.org/ngthorg/Redux-Universal.svg?branch=immutable)](https://travis-ci.org/ngthorg/Redux-Universal)
 
 ### Installation
 ```

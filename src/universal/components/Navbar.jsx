@@ -11,10 +11,10 @@ export default class Navbar extends React.Component {
 
   constructor(props, context) {
     super(props, context)
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClickSearch = this.handleClickSearch.bind(this)
   }
 
-  handleClick() {
+  handleClickSearch() {
     const { store } = this.context
     store.dispatch(routeActions.push('/search'))
   }
@@ -23,7 +23,7 @@ export default class Navbar extends React.Component {
     return (
       <nav className="navbar navbar-fixed-top navbar-light bg--white">
         <Link className="navbar-brand" to="/">Example</Link>
-        <div className="pull-right" onClick={this.handleClick}>
+        <div className="pull-right" onClick={this.handleClickSearch}>
           <i className="ion-ios-search" />
         </div>
       </nav>

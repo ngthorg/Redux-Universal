@@ -1,26 +1,31 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
-// Sass utilities
-@import 'helpers/variables';
-@import 'helpers/functions';
-@import 'helpers/mixins';
-@import 'helpers/placeholders';
+/**
+ * Vendors
+ */
+@import "vendors/index";
 
-// Vendors and external stylesheets
-@import 'vendors/bootstrap/index';
+/**
+ * Utilities
+ */
+@import "utilities/index";
 
-// base stuff
-@import 'base/base';
+/**
+ * Base Styles
+ */
+@import "base/index";
 
-// Layout related stylesheets
-@import 'layout/header';
-@import 'layout/checkout';
+/**
+ * Layout Styles
+ */
+@import "layout/index";
 
-// Components and modules
-@import 'components/container';
-@import 'components/loading';
-@import 'components/imgSlider';
-@import 'components/navbar';
+/**
+ * Modules
+ */
+@import "module/index";
 
-// Page-specific stylesheets
-@import 'pages/home';
+/**
+ * States
+ */
+@import "states/index";

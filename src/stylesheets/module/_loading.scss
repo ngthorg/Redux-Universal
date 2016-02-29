@@ -1,5 +1,9 @@
+/**
+ * progress-bar
+ */
+
 .progress-bar {
-	background: #48e79a;
+	background: $progress-bar-bg;
 	height: 2px;
 	position: fixed;
 	top: 0;

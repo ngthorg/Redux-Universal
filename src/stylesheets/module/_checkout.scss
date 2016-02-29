@@ -1,7 +1,6 @@
 
-
 .checkout {
-  background: #fff;
+  background: $checkout-bg;
   @include e(section) {
     @extend %centered;
     @extend %clearfix;
@@ -16,9 +15,9 @@
     }
     @include e(number) {
       @extend %center-aligin;
-      background: #fff;
-      border: 1px solid #f1f1f1;
-      color: #f1f1f1;
+      border: 1px solid $border-color;
+      background: $checkout-bg;
+      color: $checkout-number-color;
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -33,9 +32,9 @@
         color: $brand-info;
       }
       @include m(check) {
-        background: url(https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/signup-lite-check-gray@1x.d436fc89ff3cf7a29a0e06a9535a1f60.png) center center no-repeat #fff;
+        background: url(https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/signup-lite-check-gray@1x.d436fc89ff3cf7a29a0e06a9535a1f60.png) center center no-repeat $checkout-bg;
         @include m(blue) {
-          background: url(https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/signup-lite-check-blue@1x.aa218f0f478e33cc4af79cb3b020f673.png) center center no-repeat #fff;
+          background: url(https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/signup-lite-check-blue@1x.aa218f0f478e33cc4af79cb3b020f673.png) center center no-repeat $checkout-bg;
         }
       }
     }
@@ -45,7 +44,7 @@
       left: 16px;
       width: 32px;
       height: 100%;
-      border-left: solid 1px #f1f1f1;
+      border-left: solid 1px $border-color;
       transition: all .5s ease-in;
       @include m(done) {
         border-left: solid 1px $brand-info;

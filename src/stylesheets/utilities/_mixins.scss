@@ -44,6 +44,10 @@
 
 // Image replacement
 
+@mixin img-url($img) {
+  background-image: url('#{$path--rel}/#{$img}');
+}
+
 @mixin img-replace($img, $w, $h, $disp: block) {
 	background-image: url('#{$path--rel}/#{$img}');
 	background-repeat: no-repeat;
@@ -51,6 +55,8 @@
 	height: $h;
 	display: $disp;
 }
+
+// transition
 
 @mixin transition-all($duration: null, $timing: null) {
 	@extend %transition;

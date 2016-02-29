@@ -1,0 +1,16 @@
+/**
+ * Grid display
+ */
+.is-displayed-mobile {
+  @include media-breakpoint-down(sm) {
+    display: block;
+    @at-root (with: media) {
+      .is-hidden-mobile {
+        display: none;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}

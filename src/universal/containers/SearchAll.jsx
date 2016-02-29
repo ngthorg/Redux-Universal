@@ -23,10 +23,6 @@ export default class SearchAllContainer extends React.Component {
     }).isRequired
   };
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { params: { text }, github } = this.props
     const user = github.getIn(['users', text])

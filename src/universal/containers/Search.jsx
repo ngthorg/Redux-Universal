@@ -36,7 +36,7 @@ class Search extends React.Component {
         <div className="container__header">
           <i className="ion-ios-arrow-thin-left" onClick={this.handleGoBack} />
         </div>
-        <Explore {...props}/>
+        <Explore {...props} />
         {children &&
           React.cloneElement(children, { ...props })}
       </div>

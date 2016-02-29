@@ -59,6 +59,7 @@ export default class Form extends React.Component {
         return 'You have unsaved information, are you sure you want to leave this page?'
       }
     }
+    return null
   }
 
   render() {

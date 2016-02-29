@@ -19,8 +19,8 @@ export default class User extends React.Component {
       <div>
         <h4 className="text-center">User github!</h4>
         <p>{user.get('login')}</p>
-        <Link to={`/user/ngthorg`}>ngthorg!</Link>
-        <Link to={`/user/rackt`}>rackt!</Link>
+        <Link to="/user/ngthorg">ngthorg!</Link>
+        <Link to="/user/rackt">rackt!</Link>
         <img src={user.get('avatar_url')} style={{ width: '50px', height: '50px' }} />
         <div className="text-center">
           <Link to="/">go Home!</Link>

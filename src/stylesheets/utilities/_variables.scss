@@ -5,31 +5,36 @@
 
 // Font Weights
 
-$font-weight--thin			 : 100;
-$font-weight--light			 : 300;
-$font-weight--medium		 : 400;
-$font-weight--bold			 : 700;
-$font-weight--ultra-bold : 900;
+$font-weight--thin        : 100;
+$font-weight--light       : 300;
+$font-weight--normal		  : 400;
+$font-weight--medium		  : 500;
+$font-weight--bold			  : 700;
+
+// Path to Assets
+$path--rel                : "./images";
 
 // Text
 
-$base__font-size : 16px;
-$base__line      : 24px;
-$letter-space    : 1px;
+$base__font-size : $font-size-root;
 
 // Descriptive Base Colors
 
-$white    : #fff;
+$color-light    : #fff;
+$base-bg        : #fff;
+$border-color   : #f1f1f1;
 
-// background color
+// header class
 
-$bg-header			: #3C3945;
-$bg-footer			: #3C3945;
+$header-bg			: #3C3945;
 
 // imgSlider
+
 $imgSlider-viewer-h										: 500px;
 $imgSlider-viewer-h-mobile						: 300px;
+
 // ImgSliderLightBox
+
 $ImgSliderLightBox-zIndex							: 2000;
 $ImgSliderLightBox-viewer-h						: 90%;
 $ImgSliderLightBox-viewer-w						: 90%;
@@ -40,3 +45,16 @@ $ImgSliderLightBox-close-size					: 40px;
 $ImgSliderLightBox-close-top					: 10px;
 $ImgSliderLightBox-close-right				: 15px;
 $ImgSliderLightBox-NextPrev-ion				: 32px;
+
+// checkout
+
+$checkout-bg                          : #fff;
+$checkout-number-color                : #f1f1f1;
+
+// container
+
+$container-bg                         : #fff;
+$container-border-radius              : 4px;
+
+// progress-bar
+$progress-bar-bg                      : #48e79a;

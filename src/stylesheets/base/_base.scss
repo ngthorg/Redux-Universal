@@ -6,6 +6,12 @@
   outline-style: none !important;
 }
 
+*, *::after, *::before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
 body {
   font-weight: $font-weight--normal;
   @include img-url('backslash.jpeg');

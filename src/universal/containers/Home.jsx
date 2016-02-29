@@ -52,6 +52,7 @@ class Home extends React.Component {
             Increment async
           </button>
         </p>
+        <p><Link to="/test">Test</Link></p>
         <p><Link to="/form">Form</Link></p>
         <p><Link to="/user/ngthorg">ngthorg</Link></p>
         <p><Link to="/user/rackt">rackt</Link></p>

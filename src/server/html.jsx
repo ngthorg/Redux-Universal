@@ -12,7 +12,7 @@ export default class Html extends React.Component {
   render() {
     const { state, markup } = this.props
     return (
-      <html lang="en">
+      <html lang="en" className="no-js">
         <head>
           <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
           {DocumentMeta.renderAsReact()}
@@ -21,6 +21,8 @@ export default class Html extends React.Component {
             <link rel="stylesheet" type="text/css" href="/css/style.css" />
           )}
           <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+          <script src="http://tympanus.net/Development/ElasticStack/js/modernizr.custom.js" />
+          <script src="http://tympanus.net/Development/ElasticStack/js/draggabilly.pkgd.min.js" />
         </head>
         <body>
 

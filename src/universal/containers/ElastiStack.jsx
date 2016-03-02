@@ -11,7 +11,7 @@ export default class ElastiStack extends React.Component {
   }
 
   componentWillUnmount() {
-    delete self.elastiStack
+    delete this.elastiStack
   }
 
   render() {

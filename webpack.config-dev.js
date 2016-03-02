@@ -1,12 +1,16 @@
 const path = require('path')
 const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
+const fromImages = path.resolve(__dirname, 'src/client/images')
+const toImages = path.resolve(__dirname, 'images')
 
 module.exports = {
   entry: [
     'webpack-hot-middleware/client',
     './src/client/index.js'
   ],
+  devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'js/bundle.js',
@@ -60,6 +64,10 @@ module.exports = {
     ]
   },
   plugins: [
+    // Simply copies the files over
+    new CopyWebpackPlugin([
+      { from: fromImages, to: toImages }
+    ]),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),

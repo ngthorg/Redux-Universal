@@ -29,6 +29,7 @@ rules:
   no-mixed-spaces-and-tabs: 2
   no-console: 1
   semi: [2, never]
+  prefer-const: 0
   # airbnb
   # space-after-keywords: [2, always]
   prefer-template: 0

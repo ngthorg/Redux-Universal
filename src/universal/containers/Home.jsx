@@ -20,10 +20,6 @@ class Home extends React.Component {
     incrementIfOdd: PropTypes.func.isRequired
   };
 
-  constructor(props, context) {
-    super(props, context)
-  }
-
   render() {
     const { counter, decrement, increment, incrementAsync, incrementIfOdd } = this.props
     return (
@@ -52,10 +48,8 @@ class Home extends React.Component {
             Increment async
           </button>
         </p>
-        <p><Link to="/test">Test</Link></p>
+        <p><Link to="/elasticstack">ElastiStack</Link></p>
         <p><Link to="/form">Form</Link></p>
-        <p><Link to="/user/ngthorg">ngthorg</Link></p>
-        <p><Link to="/user/rackt">rackt</Link></p>
         <ImgSlider
           images={[
             'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fefa5120099237.562e57c552241.jpg',

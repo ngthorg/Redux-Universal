@@ -1,6 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+const fromImages = path.resolve(__dirname, 'src/client/images')
+const toImages = path.resolve(__dirname, 'images')
+
 
 const sassLoaders = [
   'css-loader',
@@ -45,6 +50,10 @@ module.exports = {
     ]
   },
   plugins: [
+    // Simply copies the files over
+    new CopyWebpackPlugin([
+      { from: fromImages, to: toImages }
+    ]),
     new ExtractTextPlugin('css/style.css'),
     new webpack.DefinePlugin({
       __DEV__: false,

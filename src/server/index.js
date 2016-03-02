@@ -11,9 +11,8 @@ import HtmlComponent from 'server/html'
 
 
 export default async function (req, res, next) {
-  const finalCreateStore = applyMiddleware(promiseMiddleware)(createStore)
-  const store = finalCreateStore(Reducers, {})
-
+  let finalCreateStore = applyMiddleware(promiseMiddleware)(createStore)
+  let store = finalCreateStore(Reducers, {})
 
   match({ routes: routers(store), location: req.url },
     async (err, redirectLocation, routerState) => {
@@ -60,7 +59,7 @@ export default async function (req, res, next) {
           <HtmlComponent markup={body} state={serialize(JSON.stringify(initialState))} />
         )
 
-        res.send(`<!DOCTYPE html>` + html)
+        res.send('<!DOCTYPE html>' + html)
       } catch (err) {
         next(err)
       }

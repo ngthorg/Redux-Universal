@@ -42,10 +42,10 @@ module.exports = {
         })
       }, {
         test: /\.(png|jpg|jpeg|gif)$/,
-        loader: 'url-loader?limit=10240'
+        loader: 'url-loader?limit=10240&name=icons/[name].[ext]'
       }, {
         test: /\.(eot|woff2|woff|ttf|svg)$/,
-        loader: 'url-loader'
+        loader: 'file-loader?name=fonts/[name].[ext]'
       }
     ]
   },

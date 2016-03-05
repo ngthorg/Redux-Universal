@@ -4,9 +4,8 @@ import React from 'react'
 export default class ElastiStack extends React.Component {
 
   componentDidMount() {
-    const self = this
-    require(['client/plugins/elastiStack'], (test) => {
-      self.elastiStack = new test.ElastiStack(this.refs.elasticstack)
+    require(['client/plugins/elastiStack'], (elStack) => {
+      this.elastiStack = new elStack.ElastiStack(this.refs.elasticstack)
     })
   }
 

@@ -7,7 +7,7 @@ const express = require('express')
 const compress = require('compression')
 const cookieParser = require('cookie-parser')
 const app = express()
-const render = require('server').default
+const render = require('server')
 const port = process.env.PORT || 3000
 
 
@@ -35,10 +35,6 @@ app.use((err, req, res) => {
   }
 })
 
-app.listen(port, (error) => {
-  if (error) {
-    console.error(error)
-  } else {
-    console.info(`==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`)
-  }
+app.listen(port, () => {
+  console.info(`==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`)
 })

@@ -20,7 +20,6 @@ extends:
 
 rules:
   # Ignore Rules
-  strict: 0
   indent: [ 2, 2, { SwitchCase: 1 } ]
   comma-dangle: [1, never]
   comma-style: [2, last]
@@ -28,8 +27,8 @@ rules:
   linebreak-style: [2, unix]
   no-mixed-spaces-and-tabs: 2
   no-console: 1
+  max-len: 0
   semi: [2, never]
-  prefer-const: 0
   # airbnb
   # space-after-keywords: [2, always]
   prefer-template: 0

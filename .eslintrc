@@ -26,7 +26,7 @@ rules:
   quotes: [2, single]
   linebreak-style: [2, unix]
   no-mixed-spaces-and-tabs: 2
-  no-console: 1
+  no-console: 0
   max-len: 0
   semi: [2, never]
   # airbnb
@@ -67,3 +67,5 @@ rules:
   react/react-in-jsx-scope: 2
   # react/self-closing-comp: 2
   # react/wrap-multilines: 2
+
+  react/prefer-stateless-function: 0

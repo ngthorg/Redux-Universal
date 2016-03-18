@@ -23,6 +23,7 @@ app.use(webpackDevMiddleware(compiler, {
 app.use(webpackHotMiddleware(compiler))
 
 app.use(cookieParser())
+app.use('/node_modules', express.static('node_modules'))
 
 app.get('*', render)
 

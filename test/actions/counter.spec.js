@@ -37,7 +37,10 @@ describe('actions: counter', () => {
     const expectedActions = [
       { type: types.INCREMENT_COUNTER }
     ]
-    const store = mockStore({}, expectedActions, done)
+    const store = mockStore({})
     store.dispatch(counterActions.incrementAsync())
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions)
+      }).then(done).catch(done)
   })
 })

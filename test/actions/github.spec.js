@@ -23,11 +23,14 @@ describe('actions: github', () => {
     .get(`/users/${login}`)
     .reply(200, data)
     const expectedActions = [
-    { type: types.GET_USER_REQUEST, user: login },
-    { type: types.GET_USER_SUCCESS, data, status: 200, user: login }
+      { type: types.GET_USER_REQUEST, user: login },
+      { type: types.GET_USER_SUCCESS, data, status: 200, user: login }
     ]
-    const store = mockStore({}, expectedActions, done)
+    const store = mockStore({})
     store.dispatch(githubActions.fetchUser(login))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions)
+      }).then(done).catch(done)
   })
 
   it('should getUser', (done) => {
@@ -50,7 +53,10 @@ describe('actions: github', () => {
     const fn = githubActions.getUser(login, ['login'])
     expect(fn).toBeA('function')
     const getState = () => ({ github: datatest })
-    const store = mockStore(getState, expectedActions, done)
+    const store = mockStore(getState)
     store.dispatch(fn)
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions)
+      }).then(done).catch(done)
   })
 })

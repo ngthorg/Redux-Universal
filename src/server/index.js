@@ -11,8 +11,8 @@ import HtmlComponent from 'server/html'
 
 
 export default async function (req, res, next) {
-  let finalCreateStore = applyMiddleware(promiseMiddleware)(createStore)
-  let store = finalCreateStore(Reducers, {})
+  const finalCreateStore = applyMiddleware(promiseMiddleware)(createStore)
+  const store = finalCreateStore(Reducers, {})
 
   match({ routes: routers(store), location: req.url },
     async (err, redirectLocation, routerState) => {

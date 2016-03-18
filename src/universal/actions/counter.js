@@ -28,10 +28,20 @@ export function incrementIfOdd() {
   }
 }
 
+// // Common function
+// export function incrementAsync(delay = 1000) {
+//   return dispatch => {
+//     setTimeout(() => {
+//       dispatch(increment())
+//     }, delay)
+//   }
+// }
+
+// using Promise
 export function incrementAsync(delay = 1000) {
-  return dispatch => {
+  return dispatch => new Promise((resolve) => {
     setTimeout(() => {
-      dispatch(increment())
+      resolve(dispatch(increment()))
     }, delay)
-  }
+  })
 }

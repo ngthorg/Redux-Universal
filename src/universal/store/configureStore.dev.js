@@ -1,26 +1,23 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { fromJS } from 'immutable'
 import createLogger from 'redux-logger'
-import { browserHistory } from 'react-router'
-import { syncHistory } from 'react-router-redux'
+import { routerMiddleware } from 'react-router-redux'
 import promiseMiddleware from 'universal/lib/promiseMiddleware'
 import Reducers from 'universal/reducers'
 
-const reduxRouterMiddleware = syncHistory(browserHistory)
 
-const finalCreateStore = compose(
-  applyMiddleware(promiseMiddleware, reduxRouterMiddleware, createLogger({
-		// development using redux-logger with Immutable
-    stateTransformer: state => fromJS(state).toJS()
-  })))(
-    /**
-     * using redux-devtools-extension
-     * https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
-     */
-    window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore
-  )
-
-export default function configureStore(initialState) {
+export default function configureStore(history, initialState) {
+  const finalCreateStore = compose(
+    applyMiddleware(promiseMiddleware, routerMiddleware(history), createLogger({
+      // development using redux-logger with Immutable
+      stateTransformer: state => fromJS(state).toJS()
+    })))(
+      /**
+      * using redux-devtools-extension
+      * https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+      */
+      window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore
+    )
   const store = finalCreateStore(Reducers, initialState)
 
   if (module.hot) {
@@ -28,8 +25,6 @@ export default function configureStore(initialState) {
       store.replaceReducer(require('universal/reducers').default)
     )
   }
-
-  reduxRouterMiddleware.listenForReplays(store)
 
   return store
 }

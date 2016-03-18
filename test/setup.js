@@ -8,7 +8,7 @@ chai.use(chaiEnzyme())
 chai.use(chaiImmutable)
 
 
-global.document = jsdom('<html><body></body></html>')
+global.document = jsdom('<!doctype html><html><body></body></html>')
 global.window = document.defaultView
 global.navigator = window.navigator
 

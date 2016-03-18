@@ -14,6 +14,7 @@ const port = process.env.PORT || 3000
 app.use(cookieParser())
 app.use(compress())
 app.use(express.static(__dirname + '/public', { maxage: 8640000 }))
+app.use('/node_modules', express.static('node_modules'))
 
 
 app.get('*', render)

@@ -14,13 +14,25 @@ export default class Html extends React.Component {
     return (
       <html lang="en" className="no-js">
         <head>
-          <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+          <meta charSet="UTF-8" />
+          <meta name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+          />
           {DocumentMeta.renderAsReact()}
-          <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 64x64 128x128 256x256" />
+          <link type="image/x-icon"
+            rel="shortcut icon"
+            href="/favicon.ico"
+            sizes="16x16 32x32 64x64 128x128 256x256"
+          />
           {!__DEV__ && (
             <link rel="stylesheet" type="text/css" href="/css/style.css" />
           )}
-          <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+          />
+          <link rel="stylesheet" href="/node_modules/draft-js/dist/Draft.css" />
           <script src="http://tympanus.net/Development/ElasticStack/js/modernizr.custom.js" />
           <script src="http://tympanus.net/Development/ElasticStack/js/draggabilly.pkgd.min.js" />
         </head>

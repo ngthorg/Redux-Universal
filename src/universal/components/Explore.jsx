@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { findDOMNode } from 'react-dom'
-import { routeActions } from 'react-router-redux'
+import { routerActions } from 'react-router-redux'
 import shallowCompare from 'react/lib/shallowCompare'
 import shallowEqual from 'react-redux/lib/utils/shallowEqual'
 
@@ -63,7 +63,7 @@ export default class Explore extends React.Component {
   handleSearch(value) {
     if (value) {
       const { store } = this.context
-      store.dispatch(routeActions.push(`/search/${value}`))
+      store.dispatch(routerActions.push(`/search/${value}`))
     }
   }
 

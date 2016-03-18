@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import { routeActions } from 'react-router-redux'
+import { routerActions } from 'react-router-redux'
 
 
 export default class Navbar extends React.Component {
@@ -16,7 +16,7 @@ export default class Navbar extends React.Component {
 
   handleClickSearch() {
     const { store } = this.context
-    store.dispatch(routeActions.push('/search'))
+    store.dispatch(routerActions.push('/search'))
   }
 
   render() {

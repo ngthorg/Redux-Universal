@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import DocumentMeta from 'react-document-meta'
-import { routeActions } from 'react-router-redux'
+import { routerActions } from 'react-router-redux'
 
 
 const meta = { title: '404 Not Found!' }
@@ -18,7 +18,7 @@ export default class NotFound extends React.Component {
 
   handleClick() {
     const { store } = this.context
-    store.dispatch(routeActions.push('/'))
+    store.dispatch(routerActions.push('/'))
   }
 
   render() {

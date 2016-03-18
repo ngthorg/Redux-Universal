@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import DocumentMeta from 'react-document-meta'
-import { routeActions } from 'react-router-redux'
+import { routerActions } from 'react-router-redux'
 import Navbar from 'universal/components/Navbar'
 import Explore from 'universal/components/Explore'
 
@@ -24,7 +24,7 @@ class Search extends React.Component {
 
   handleGoBack() {
     const { store } = this.context
-    store.dispatch(routeActions.goBack())
+    store.dispatch(routerActions.goBack())
   }
 
   render() {

@@ -1,8 +1,6 @@
 require('babel-core/register')
 require('babel-polyfill')
 
-global.__DEV__ = false
-
 const express = require('express')
 const compress = require('compression')
 const cookieParser = require('cookie-parser')

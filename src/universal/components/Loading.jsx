@@ -7,8 +7,4 @@ function Loading() {
   )
 }
 
-// Loading.propTypes = {
-//   styles: React.PropTypes.object.isRequired
-// }
-
 export default Loading

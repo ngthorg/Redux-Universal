@@ -2,16 +2,10 @@ import React, { PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import classnames from 'classnames'
 import shallowCompare from 'react/lib/shallowCompare'
-import { checkoutProfileValidation } from 'universal/validation/checkoutValidation'
+import { checkoutProfileValidation } from './checkoutValidation'
 
 
-@reduxForm({
-  form: 'checkout',
-  fields: ['firstName', 'lastName'],
-  validate: checkoutProfileValidation
-})
-
-export default class CheckoutProfile extends React.Component {
+class CheckoutProfile extends React.Component {
 
   static propTypes = {
     fields: PropTypes.shape({
@@ -72,3 +66,9 @@ export default class CheckoutProfile extends React.Component {
   }
 
 }
+
+export default reduxForm({
+  form: 'checkout',
+  fields: ['firstName', 'lastName'],
+  validate: checkoutProfileValidation
+})(CheckoutProfile)

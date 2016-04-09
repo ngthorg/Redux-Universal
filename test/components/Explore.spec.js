@@ -2,7 +2,7 @@ import React from 'react'
 import { expect } from 'chai'
 import { mount } from 'enzyme'
 import sinon from 'sinon'
-import Explore from 'universal/components/Explore'
+import Explore from 'universal/components/Search/Explore'
 
 describe('components: <Explore />', () => {
   const dispatch = sinon.spy()

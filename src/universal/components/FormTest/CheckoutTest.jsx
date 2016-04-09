@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import classnames from 'classnames'
 import shallowCompare from 'react/lib/shallowCompare'
-import checkoutValidation from 'universal/validation/checkoutValidation'
+import checkoutValidation from './checkoutValidation'
 
 
 class CheckoutTest extends React.Component {

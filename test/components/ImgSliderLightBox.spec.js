@@ -2,7 +2,7 @@ import React from 'react'
 import sinon from 'sinon'
 import { expect } from 'chai'
 import { mount } from 'enzyme'
-import ImgSliderLightBox from 'universal/components/ImgSliderLightBox'
+import ImgSliderLightBox from 'universal/components/ImgSlider/ImgSliderLightBox'
 
 
 describe('components: <ImgSliderLightBox />', () => {

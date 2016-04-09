@@ -1,8 +1,6 @@
 require('babel-core/register')
 require('babel-polyfill')
 
-global.__DEV__ = true
-
 const express = require('express')
 const webpack = require('webpack')
 const cookieParser = require('cookie-parser')

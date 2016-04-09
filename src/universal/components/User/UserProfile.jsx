@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import ImmutablePropTypes from 'react-immutable-proptypes'
 
 
-export default class User extends React.Component {
+export default class UserProfile extends React.Component {
 
   static propTypes = {
     user: ImmutablePropTypes.contains({

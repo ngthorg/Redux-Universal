@@ -24,9 +24,7 @@ export default class Html extends React.Component {
             href="/favicon.ico"
             sizes="16x16 32x32 64x64 128x128 256x256"
           />
-          {!__DEV__ && (
-            <link rel="stylesheet" type="text/css" href="/css/style.css" />
-          )}
+        {(process.env.NODE_ENV === 'production') && <link rel="stylesheet" type="text/css" href="/css/style.css" />}
           <link
             rel="stylesheet"
             type="text/css"

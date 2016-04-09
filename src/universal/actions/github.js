@@ -20,7 +20,7 @@ export function getUser(login, requiredFields = []) {
   return (dispatch, getState) => {
     const user = getState().github.getIn(['users', login])
 
-    if (user && requiredFields.every(key => user.has(key))) {
+    if (user && requiredFields.every(key => user.has(key)) || user && user.get('loading') === false) {
       return null
     }
 

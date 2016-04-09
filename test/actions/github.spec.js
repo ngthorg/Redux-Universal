@@ -11,7 +11,7 @@ import { API_URL } from 'config'
 const middlewares = [promiseMiddleware]
 const mockStore = configureMockStore(middlewares)
 
-describe('actions: github', () => {
+describe.skip('actions: github', () => {
   it('should fetchUser', (done) => {
     const login = 'ngthorg'
     const data = {
@@ -20,8 +20,8 @@ describe('actions: github', () => {
       avatar_url: 'https://avatars.githubusercontent.com/u/8261421?v=3'
     }
     nock(`${API_URL}/`)
-    .get(`/users/${login}`)
-    .reply(200, data)
+      .get(`/users/${login}`)
+      .reply(200, data)
     const expectedActions = [
       { type: types.GET_USER_REQUEST, user: login },
       { type: types.GET_USER_SUCCESS, data, status: 200, user: login }
@@ -44,8 +44,8 @@ describe('actions: github', () => {
       users: {}
     })
     nock(`${API_URL}/`)
-    .get(`/users/${login}`)
-    .reply(200, data)
+      .get(`/users/${login}`)
+      .reply(200, data)
     const expectedActions = [
       { type: types.GET_USER_REQUEST, user: login },
       { type: types.GET_USER_SUCCESS, data, status: 200, user: login }

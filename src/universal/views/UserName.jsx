@@ -3,26 +3,14 @@ import { connect } from 'react-redux'
 import DocumentMeta from 'react-document-meta'
 import { prepareRoute } from 'universal/decorators'
 import { getUser } from 'universal/actions/github'
-import User from 'universal/components/User'
 import Navbar from 'universal/components/Navbar'
 import Loading from 'universal/components/Loading'
+import UserProfile from 'universal/components/User/UserProfile'
 
 
-const meta = { title: 'Counter' }
+const meta = { title: 'User Name' }
 
-@prepareRoute(async ({ store, params }) => {
-  const { name } = params
-
-  return await Promise.all([
-    store.dispatch(getUser(name, ['login']))
-  ])
-})
-
-@connect(state => ({
-  github: state.github
-}))
-
-export default class UserContainer extends React.Component {
+export class UserName extends React.Component {
 
   static propTypes = {
     github: PropTypes.object.isRequired,
@@ -48,9 +36,26 @@ export default class UserContainer extends React.Component {
       <div className="container container--margtop">
         <DocumentMeta {...meta} />
         <Navbar />
-        <User user={user} />
+        <UserProfile user={user} />
       </div>
     )
   }
 
 }
+
+
+function mapStateToProps(state) {
+  return {
+    github: state.github
+  }
+}
+
+function prepare({ store, params }) {
+  const { name } = params
+
+  return Promise.all([
+    store.dispatch(getUser(name, ['login']))
+  ])
+}
+
+export default connect(mapStateToProps)(prepareRoute(prepare)(UserName))

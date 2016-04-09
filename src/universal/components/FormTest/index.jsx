@@ -2,18 +2,12 @@ import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 import { reduxForm } from 'redux-form'
 import shallowCompare from 'react/lib/shallowCompare'
-import CheckoutProfile from 'universal/components/CheckoutProfile'
-import CheckoutTest from 'universal/components/CheckoutTest'
-import checkoutValidation from 'universal/validation/checkoutValidation'
+import CheckoutProfile from './CheckoutProfile'
+import CheckoutTest from './CheckoutTest'
+import checkoutValidation from './checkoutValidation'
 
 
-@reduxForm({
-  form: 'checkout',
-  fields: ['firstName', 'lastName', 'email'],
-  validate: checkoutValidation
-})
-
-export default class Form extends React.Component {
+class Form extends React.Component {
 
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
@@ -92,3 +86,9 @@ export default class Form extends React.Component {
   }
 
 }
+
+export default reduxForm({
+  form: 'checkout',
+  fields: ['firstName', 'lastName', 'email'],
+  validate: checkoutValidation
+})(Form)

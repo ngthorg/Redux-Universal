@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 import shallowCompare from 'react/lib/shallowCompare'
-import ImgSliderLightBox from 'universal/components/ImgSliderLightBox'
+import ImgSliderLightBox from './ImgSliderLightBox'
 
 
 export default class ImgSlider extends React.Component {

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import DocumentMeta from 'react-document-meta'
 import { routerActions } from 'react-router-redux'
 import Navbar from 'universal/components/Navbar'
-import Explore from 'universal/components/Explore'
+import Explore from 'universal/components/Search/Explore'
 
 
 const meta = { title: 'Search' }
@@ -37,8 +37,7 @@ class Search extends React.Component {
           <i className="ion-ios-arrow-thin-left" onClick={this.handleGoBack} />
         </div>
         <Explore {...props} />
-        {children &&
-          React.cloneElement(children, { ...props })}
+        {children && React.cloneElement(children, { ...props })}
       </div>
     )
   }

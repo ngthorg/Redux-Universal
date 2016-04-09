@@ -50,7 +50,6 @@ export class Home extends React.Component {
         </p>
         <p><Link to="/elasticstack">ElastiStack</Link></p>
         <p><Link to="/form">Form</Link></p>
-        <p><Link to="/test">Test</Link></p>
         <ImgSlider
           images={[
             'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fefa5120099237.562e57c552241.jpg',

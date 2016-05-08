@@ -2,6 +2,9 @@
 Sample Universal (isomorphic) using React and Redux.
 
 [![Build Status](https://travis-ci.org/ngthorg/Redux-Universal.svg?branch=immutable)](https://travis-ci.org/ngthorg/Redux-Universal)
+[![Dependency Status](https://david-dm.org/ngthorg/Redux-Universal.svg)](https://david-dm.org/ngthorg/Redux-Universal)
+[![devDependency Status](https://david-dm.org/ngthorg/Redux-Universal/dev-status.svg)](https://david-dm.org/ngthorg/Redux-Universal#info=devDependencies)
+
 
 ### Installation
 ```

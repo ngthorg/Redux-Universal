@@ -1,16 +1,13 @@
-/**
- * Mixins
- */
+// Mixins
 
 // BEM selectors
-
-@mixin e($element) {
-	&__#{$element} {
+@mixin element($element) {
+  &__#{$element} {
     @content;
   }
 }
 
-@mixin m($modifier) {
+@mixin modifier($modifier) {
   &--#{$modifier} {
     @content;
   }
@@ -18,21 +15,19 @@
 
 
 // Generate modifier color classes
-
 @mixin bg-colors($map) {
-	@each $theme, $color in $map {
-		&--#{$theme} {
-			background-color: $color;
+  @each $theme, $color in $map {
+    &--#{$theme} {
+      background-color: $color;
     }
   }
 }
 
 // Generating :before or :after pseudo-element shapes
-
 @mixin p-el($el, $el-w: null, $el-h: null) {
-	@if ($el == "before" or $el == "after") {
+  @if ($el == "before" or $el == "after") {
 	  &:#{$el} {
-		  @extend %pseudos;
+      // @extend %pseudos;
 		  width: $el-w;
 	  	height: $el-h;
 	    @content;
@@ -43,24 +38,22 @@
 }
 
 // Image replacement
-
 @mixin img-url($img) {
   background-image: url('#{$path--rel}/#{$img}');
 }
 
 @mixin img-replace($img, $w, $h, $disp: block) {
-	background-image: url('#{$path--rel}/#{$img}');
-	background-repeat: no-repeat;
-	width: $w;
-	height: $h;
-	display: $disp;
+  background-image: url('#{$path--rel}/#{$img}');
+  background-repeat: no-repeat;
+  width: $w;
+  height: $h;
+  display: $disp;
 }
 
 // transition
-
 @mixin transition-all($duration: null, $timing: null) {
-	@extend %transition;
-	transition-property: all;
-	transition-duration: $duration;
-	transition-timing-function: $timing;
+  // @extend %transition;
+  transition-property: all;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
 }

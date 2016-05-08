@@ -1,39 +1,25 @@
-/**
- * Base Style
- */
+// Base Style
 
 * {
   outline-style: none !important;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 
 body {
-  font-weight: $font-weight--normal;
-  @include img-url('backslash.jpeg');
+  @include img-url("backslash.jpeg");
   background-size: 100%;
+  font-weight: $font-weight--normal;
 }
 
 // lists
-
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-ul, ol {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-// Layout
-
-header {
-  @extend %clearfix;
 }

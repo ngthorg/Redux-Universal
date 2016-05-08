@@ -191,7 +191,7 @@ $blockquote-small-color:      $gray-light !default;
 $blockquote-font-size:        ($font-size-base * 1.25) !default;
 $blockquote-border-color:     $gray-lighter !default;
 
-$hr-border-color:             rgba(0,0,0,.1) !default;
+$hr-border-color:             rgba(0, 0, 0, .1) !default;
 $hr-border-width:             $border-width !default;
 
 $dt-font-weight:              bold !default;
@@ -292,14 +292,14 @@ $input-bg-disabled:              $gray-lighter !default;
 $input-color:                    $gray !default;
 $input-border-color:             #ccc !default;
 $input-btn-border-width:         $border-width !default; // For form controls and buttons
-$input-box-shadow:               inset 0 1px 1px rgba(0,0,0,.075) !default;
+$input-box-shadow:               inset 0 1px 1px rgba(0, 0, 0, .075) !default;
 
 $input-border-radius:            $border-radius !default;
 $input-border-radius-lg:         $border-radius-lg !default;
 $input-border-radius-sm:         $border-radius-sm !default;
 
 $input-border-focus:             #66afe9 !default;
-$input-box-shadow-focus:         rgba(102,175,233,.6) !default;
+$input-box-shadow-focus:         rgba(102, 175, 233, .6) !default;
 
 $input-color-placeholder:        #999 !default;
 
@@ -331,7 +331,7 @@ $form-icon-danger: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My
 // Dropdown menu container and contents.
 
 $dropdown-bg:                    #fff !default;
-$dropdown-border-color:          rgba(0,0,0,.15) !default;
+$dropdown-border-color:          rgba(0, 0, 0, .15) !default;
 $dropdown-border-width:          $border-width !default;
 $dropdown-divider-bg:            #e5e5e5 !default;
 
@@ -368,15 +368,15 @@ $navbar-border-radius:              $border-radius !default;
 $navbar-padding-horizontal:         $spacer !default;
 $navbar-padding-vertical:           ($spacer / 2) !default;
 
-$navbar-dark-color:                 rgba(255,255,255,.5) !default;
-$navbar-dark-hover-color:           rgba(255,255,255,.75) !default;
-$navbar-dark-active-color:          rgba(255,255,255,1) !default;
-$navbar-dark-disabled-color:        rgba(255,255,255,.25) !default;
+$navbar-dark-color:                 rgba(255, 255, 255, .5) !default;
+$navbar-dark-hover-color:           rgba(255, 255, 255, .75) !default;
+$navbar-dark-active-color:          rgba(255, 255, 255, 1) !default;
+$navbar-dark-disabled-color:        rgba(255, 255, 255, .25) !default;
 
-$navbar-light-color:                rgba(0,0,0,.3) !default;
-$navbar-light-hover-color:          rgba(0,0,0,.6) !default;
-$navbar-light-active-color:         rgba(0,0,0,.8) !default;
-$navbar-light-disabled-color:       rgba(0,0,0,.15) !default;
+$navbar-light-color:                rgba(0, 0, 0, .3) !default;
+$navbar-light-hover-color:          rgba(0, 0, 0, .6) !default;
+$navbar-light-active-color:         rgba(0, 0, 0, .8) !default;
+$navbar-light-disabled-color:       rgba(0, 0, 0, .15) !default;
 
 
 // Navs
@@ -503,7 +503,7 @@ $tooltip-arrow-color:         $tooltip-bg !default;
 $popover-bg:                          #fff !default;
 $popover-max-width:                   276px !default;
 $popover-border-width:                $border-width !default;
-$popover-border-color:                rgba(0,0,0,.2) !default;
+$popover-border-color:                rgba(0, 0, 0, .2) !default;
 
 $popover-title-bg:                    darken($popover-bg, 3%) !default;
 
@@ -537,7 +537,7 @@ $modal-title-padding:         15px !default;
 $modal-title-line-height:     $line-height !default;
 
 $modal-content-bg:                             #fff !default;
-$modal-content-border-color:                   rgba(0,0,0,.2) !default;
+$modal-content-border-color:                   rgba(0, 0, 0, .2) !default;
 
 $modal-backdrop-bg:           #000 !default;
 $modal-backdrop-opacity:      .5 !default;
@@ -632,7 +632,7 @@ $breadcrumb-divider:            "/" !default;
 
 // Carousel
 
-$carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6) !default;
+$carousel-text-shadow:                        0 1px 2px rgba(0, 0, 0, .6) !default;
 
 $carousel-control-color:                      #fff !default;
 $carousel-control-width:                      15% !default;

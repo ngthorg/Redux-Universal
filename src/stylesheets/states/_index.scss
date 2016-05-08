@@ -1,14 +1,11 @@
-/**
- * Grid Display
- */
-@import 'grid-display';
+// State
+// overrides defaults-e.g. .is-opened (ghi đè. vd: .is-opened)
 
-/**
- * Collapsed State
- */
-@import 'collapsed';
+// Grid Display
+@import "grid-display";
 
-/**
- * Pull State
- */
-@import 'pull';
+// Collapsed State
+@import "collapsed";
+
+// Pull State
+@import "pull";

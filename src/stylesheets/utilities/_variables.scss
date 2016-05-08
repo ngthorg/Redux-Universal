@@ -4,57 +4,63 @@
 
 
 // Font Weights
-
-$font-weight--thin        : 100;
-$font-weight--light       : 300;
-$font-weight--normal		  : 400;
-$font-weight--medium		  : 500;
-$font-weight--bold			  : 700;
+$font-weight--thin: 100;
+$font-weight--light: 300;
+$font-weight--normal: 400;
+$font-weight--medium: 500;
+$font-weight--bold: 700;
 
 // Path to Assets
-$path--rel                : "./images";
+$path--rel: "./images";
 
 // Text
-
-$base__font-size : $font-size-root;
+$base-font-size: $font-size-root;
 
 // Descriptive Base Colors
-
-$color-light    : #fff;
-$base-bg        : #fff;
-$border-color   : #f1f1f1;
+$color-light: #fff;
+$base-bg: #fff;
+$border-color: #f1f1f1;
 
 // header class
-
-$header-bg			: #3C3945;
+$header-bg: #3c3945;
 
 // imgSlider
-
-$imgSlider-viewer-h										: 500px;
-$imgSlider-viewer-h-mobile						: 300px;
+$imgslider-viewer-h: 500px;
+$imgslider-viewer-h-mobile: 300px;
 
 // ImgSliderLightBox
-
-$ImgSliderLightBox-zIndex							: 2000;
-$ImgSliderLightBox-viewer-h						: 90%;
-$ImgSliderLightBox-viewer-w						: 90%;
-$ImgSliderLightBox-indicator-bottom		: 30px;
-$ImgSliderLightBox-indicator-dot-zise	: 8px;
-$ImgSliderLightBox-indicator-dot-bg		: #EFEEF3;
-$ImgSliderLightBox-close-size					: 40px;
-$ImgSliderLightBox-close-top					: 10px;
-$ImgSliderLightBox-close-right				: 15px;
-$ImgSliderLightBox-NextPrev-ion				: 32px;
+$img-slider-lightbox-zindex: 2000;
+$img-slider-lightbox-bg: rgba(37, 43, 51, .96);
+$img-slider-lightbox-close-color: rgba(255, 255, 255, .6);
+$img-slider-lightbox-viewer-h: 90%;
+$img-slider-lightbox-viewer-w: 90%;
+$img-slider-lightbox-indicator-bottom: 30px;
+$img-slider-lightbox-indicator-dot-zise: 8px;
+$img-slider-lightbox-indicator-dot-bg: #efeef3;
+$img-slider-lightbox-close-size: 40px;
+$img-slider-lightbox-close-top: 10px;
+$img-slider-lightbox-close-right: 15px;
+$img-slider-lightbox-direction-ion: 32px;
+$img-slider-lightbox-direction-ion-color: rgba(255, 255, 255, .6);
+$img-slider-lightbox-direction-bg: rgba(0, 0, 0, .1);
+$img-slider-lightbox-direction-bg-hover: rgba(0, 0, 0, .2);
+$indicator-shadow: rgba(0, 0, 0, .2);
+$indicator-indicator-bg: #3c3945;
 
 // checkout
-
-$checkout-bg                          : #fff;
-$checkout-number-color                : #f1f1f1;
+$checkout-bg: #fff;
+$checkout-number-color: #f1f1f1;
 
 // container
-
-$container-bg                         : #fff;
-$container-border-radius              : 4px;
+$container-bg: #fff;
+$container-shadow: rgba(26, 26, 26, 0.14);
+$container-border-radius: 4px;
 
 // progress-bar
-$progress-bar-bg                      : #48e79a;
+$progress-bar-bg: #48e79a;
+
+// elasticstack
+$elasticstack-shadow-frist: rgba(0, 0 , 0, 0.12);
+$elasticstack-shadow-second: rgba(0, 0, 0, 0.1);
+$elasticstack-border-color: #fff;
+$elasticstack-title-color: #fff;

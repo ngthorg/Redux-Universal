@@ -1,54 +1,58 @@
 
 .checkout {
   background: $checkout-bg;
-  @include e(section) {
-    @extend %centered;
-    @extend %clearfix;
+
+  &__title {
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  &__section {
     width: 600px;
     position: relative;
-    padding: 0 50px 50px 50px;
+    padding: 0 50px 50px;
     margin-bottom: -25px;
-    @include e(title) {
-      color: #333;
-      font-size: 22px;
-      font-weight: 300;
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    width: 32px;
+    height: 100%;
+    border-left: solid 1px $border-color;
+    transition: all .5s ease-in;
+
+    &--done {
+      border-left: solid 1px $brand-info;
     }
-    @include e(number) {
-      @extend %center-aligin;
-      border: 1px solid $border-color;
-      background: $checkout-bg;
-      color: $checkout-number-color;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      left: 0px;
-      z-index: 1;
-      padding: em(4px);
-      transition: all .5s ease-in;
-      @include m(focus) {
-        border: 1px solid $brand-info;
-        color: $brand-info;
-      }
-      @include m(check) {
-        background: url(https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/signup-lite-check-gray@1x.d436fc89ff3cf7a29a0e06a9535a1f60.png) center center no-repeat $checkout-bg;
-        @include m(blue) {
-          background: url(https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/signup-lite-check-blue@1x.aa218f0f478e33cc4af79cb3b020f673.png) center center no-repeat $checkout-bg;
-        }
-      }
+  }
+
+  &__number {
+    border: 1px solid $border-color;
+    background: $checkout-bg;
+    color: $checkout-number-color;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: em(4px);
+    transition: all .5s ease-in;
+
+    &--focus {
+      border: 1px solid $brand-info;
+      color: $brand-info;
     }
-    @include e(line) {
-      position: absolute;
-      top: 0;
-      left: 16px;
-      width: 32px;
-      height: 100%;
-      border-left: solid 1px $border-color;
-      transition: all .5s ease-in;
-      @include m(done) {
-        border-left: solid 1px $brand-info;
-      }
+
+    &--checked {
+      background: url("#{$path--rel}/signup-lite-check-blue.png") center center no-repeat $checkout-bg;
+    }
+
+    &--unchecked {
+      background: url("#{$path--rel}/signup-lite-check-gray.png") center center no-repeat $checkout-bg;
     }
   }
 }

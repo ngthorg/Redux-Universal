@@ -1,6 +1,5 @@
 
 header {
-	@extend %center-aligin;
-	background: $header-bg;
-	padding: em(50px) 0 em(25px) 0;
+  background: $header-bg;
+  padding: em(50px) 0;
 }

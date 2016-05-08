@@ -1,35 +1,38 @@
-/**
- * progress-bar
- */
+// progress-bar
+
+$progress-show: rgba(26, 26, 26, .18);
 
 .progress-bar {
-	background: $progress-bar-bg;
-	height: 2px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 0%;
-	z-index: 10000;
-	box-shadow: 0 1px 2px rgba(26, 26, 26, .18);
-	animation-name: loading;
-	animation-duration: 1s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: normal;
+  background: $progress-bar-bg;
+  height: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  z-index: 10000;
+  box-shadow: 0 1px 2px $progress-show;
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
 }
 
 
 @keyframes loading {
-	0% {
+  0% {
     width: 0%;
   }
-	50% {
-		width: 35%;
+
+  50% {
+    width: 35%;
   }
-	75% {
-		width: 65%;
+
+  75% {
+    width: 65%;
   }
-	100% {
-		width: 100%;
+
+  100% {
+    width: 100%;
   }
 }

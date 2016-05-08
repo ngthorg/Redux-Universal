@@ -1,6 +1,4 @@
-/**
- * Collapsed
- */
+// Collapsed
 .is-collapsed-mobile {
   @include media-breakpoint-down(sm) {
     visibility: collapse;

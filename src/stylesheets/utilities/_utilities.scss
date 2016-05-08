@@ -1,0 +1,53 @@
+// Placeholder Selectors
+
+// Clearfix
+.clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// flexbox
+.flex-component {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+// Screen reader text
+.srt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Center alignment
+.center-aligin {
+  text-align: center;
+}
+
+// Center elements
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// For pseudo-elements
+.pseudos {
+  content: "";
+  display: block;
+  position: absolute;
+}

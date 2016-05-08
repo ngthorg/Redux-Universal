@@ -1,5 +1,5 @@
-import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
 import {
   App,
   Home,
@@ -8,8 +8,8 @@ import {
   Search,
   SearchName,
   NotFound,
-  ElastiStack
-} from 'universal/views'
+  ElastiStack,
+} from './views';
 
 
 export default () => (
@@ -23,4 +23,4 @@ export default () => (
     </Route>
     <Route name="NotFound" path="*" component={NotFound} />
   </Route>
-)
+);

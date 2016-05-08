@@ -42,6 +42,8 @@ describe('actions: counter', () => {
     store.dispatch(counterActions.incrementAsync())
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);
-      }).then(done).catch(done);
+      })
+      .then(done)
+      .catch(done);
   });
 });

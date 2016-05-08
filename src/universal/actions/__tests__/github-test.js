@@ -31,7 +31,9 @@ describe.skip('actions: github', () => {
     store.dispatch(githubActions.fetchUser(login))
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);
-      }).then(done).catch(done);
+      })
+      .then(done)
+      .catch(done);
   });
 
   it('should getUser', (done) => {
@@ -58,6 +60,8 @@ describe.skip('actions: github', () => {
     store.dispatch(fn)
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);
-      }).then(done).catch(done);
+      })
+      .then(done)
+      .catch(done);
   });
 });

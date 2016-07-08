@@ -1,14 +1,15 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import { browserHistory } from 'react-router';
 import { fromJS } from 'immutable';
 import createLogger from 'redux-logger';
-import { routerMiddleware } from 'react-router-redux';
+import { routerMiddleware, syncHistoryWithStore } from 'react-router-redux';
 import promiseMiddleware from '../lib/promiseMiddleware';
 import Reducers from '../reducers';
 
 
-export default function configureStore(history, initialState) {
+export default function configureStore(initialState) {
   const finalCreateStore = compose(
-    applyMiddleware(promiseMiddleware, routerMiddleware(history), createLogger({
+    applyMiddleware(promiseMiddleware, routerMiddleware(browserHistory), createLogger({
       // development using redux-logger with Immutable
       stateTransformer: state => fromJS(state).toJS(),
     })))(
@@ -25,6 +26,8 @@ export default function configureStore(history, initialState) {
       store.replaceReducer(require('../reducers').default)
     );
   }
+
+  syncHistoryWithStore(browserHistory, store);
 
   return store;
 }

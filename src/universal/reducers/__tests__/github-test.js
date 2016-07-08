@@ -1,9 +1,9 @@
-import expect from 'expect';
-import { describe, it } from 'mocha';
+import { fromJS } from 'immutable';
 import github from '../github';
 import * as types from '../../constants/ActionTypes';
-import { fromJS } from 'immutable';
 
+jest.unmock('../github');
+jest.unmock('../../constants/ActionTypes');
 
 describe('reducers: github', () => {
   it('action GET_USER_REQUEST', () => {

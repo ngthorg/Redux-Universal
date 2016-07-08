@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import classnames from 'classnames';
 import shallowCompare from 'react/lib/shallowCompare';
 import { checkoutProfileValidation } from './checkoutValidation';
@@ -8,10 +8,6 @@ import { checkoutProfileValidation } from './checkoutValidation';
 class CheckoutProfile extends React.Component {
 
   static propTypes = {
-    fields: PropTypes.shape({
-      firstName: PropTypes.object.isRequired,
-      lastName: PropTypes.object.isRequired,
-    }).isRequired,
     setProfileValid: PropTypes.func.isRequired,
     valid: PropTypes.bool.isRequired,
   };
@@ -31,7 +27,7 @@ class CheckoutProfile extends React.Component {
   }
 
   render() {
-    const { fields: { firstName, lastName }, valid } = this.props;
+    const { valid } = this.props;
     const classLine = classnames({
       checkout__line: true,
       'checkout__line--done': valid,
@@ -46,20 +42,22 @@ class CheckoutProfile extends React.Component {
         <div className={classLine} />
         <fieldset className="form-group">
           <label>First Name</label>
-          <input
+          <Field
+            name="firstName"
+            component="input"
             type="text"
             className="form-control"
             placeholder="First Name"
-            {...firstName}
           />
         </fieldset>
         <fieldset className="form-group">
           <label>Last Name</label>
-          <input
+          <Field
+            name="lastName"
+            component="input"
             type="text"
             className="form-control"
             placeholder="Last Name"
-            {...lastName}
           />
         </fieldset>
       </div>
@@ -70,6 +68,5 @@ class CheckoutProfile extends React.Component {
 
 export default reduxForm({
   form: 'checkout',
-  fields: ['firstName', 'lastName'],
   validate: checkoutProfileValidation,
 })(CheckoutProfile);

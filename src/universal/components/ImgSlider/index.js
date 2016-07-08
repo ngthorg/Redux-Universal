@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import shallowCompare from 'react/lib/shallowCompare';
 import ImgSliderLightBox from './ImgSliderLightBox';
-import IndicatorItem from './IndicatorItem';
 
 export default class ImgSlider extends React.Component {
 
@@ -15,6 +14,7 @@ export default class ImgSlider extends React.Component {
   constructor(props) {
     super(props);
     this.renderGallery = this.renderGallery.bind(this);
+    this.renderIndicator = this.renderIndicator.bind(this);
     this.handleImgMediumClick = this.handleImgMediumClick.bind(this);
     this.handleIndicatorClick = this.handleIndicatorClick.bind(this);
     this.showLightBox = this.showLightBox.bind(this);
@@ -88,12 +88,25 @@ export default class ImgSlider extends React.Component {
 		);
   }
 
+  renderIndicator(_, i) {
+    const liClass = classnames({
+      'img-slider__indicator-item': true,
+      'img-slider__indicator-item--current': this.state.current === i,
+    });
+
+    return (
+      <li
+        key={i} className={liClass}
+        onClick={() => { this.setCurrent(i); }}
+      />
+    );
+  }
+
   renderTab(url, i) {
-    const { current } = this.state;
     const liClass = classnames({
       'img-slider__item': true,
       'img-slider__item--small': true,
-      'img-slider__item--current': current === i,
+      'img-slider__item--current': this.state.current === i,
     });
 
     return (
@@ -115,18 +128,7 @@ export default class ImgSlider extends React.Component {
           </div>
           <div className="img-slider__indicator center-aligin">
             <ul className="img-slider__indicators">
-              {images.map((_, i) => {
-                const liClass = classnames({
-                  'img-slider__indicator-item': true,
-                  'img-slider__indicator-item--current': this.state.current === i,
-                });
-
-                return (
-                  <IndicatorItem
-                    key={i} index={i} className={liClass} setCurrent={this.setCurrent}
-                  />
-                );
-              })}
+              {images.map(this.renderIndicator)}
             </ul>
           </div>
         </div>

@@ -43,9 +43,9 @@ export default class Explore extends React.Component {
     return this.refs.search.value;
   }
 
-  handleOnChange() {
+  handleOnChange(e) {
     this.setState({
-      search: this.getInputValue(),
+      search: e.target.value,
     });
   }
 

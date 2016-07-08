@@ -20,7 +20,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.sass', '.scss', '.css'],
-    modulesDirectories: ['src', 'node_modules'],
+    modulesDirectories: ['node_modules'],
   },
   module: {
     loaders: [
@@ -47,7 +47,7 @@ module.exports = {
     ],
   },
   sassLoader: {
-    includePaths: ['src', 'node_modules'],
+    includePaths: ['node_modules'],
   },
   postcss: [
     autoprefixer({ browsers: ['last 2 versions'] }),

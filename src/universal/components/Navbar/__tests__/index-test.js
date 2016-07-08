@@ -1,10 +1,9 @@
 import React from 'react';
-import { describe, it } from 'mocha';
-import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import Navbar from '../index';
 
+jest.unmock('../index');
 
 describe('components: <Navbar />', () => {
   it('renders click icon to serach"', () => {
@@ -16,10 +15,10 @@ describe('components: <Navbar />', () => {
       { context: { store } },
     );
 
-    expect(wrapper.find('.navbar')).to.have.length(1);
-    expect(wrapper.find('.pull-right')).to.have.length(1);
-    expect(store.dispatch.calledOnce).to.equal(false);
+    expect(wrapper.find('.navbar')).toHaveLength(1);
+    expect(wrapper.find('.pull-right')).toHaveLength(1);
+    expect(store.dispatch.calledOnce).toEqual(false);
     wrapper.find('.pull-right').simulate('click');
-    expect(store.dispatch.calledOnce).to.equal(true);
+    expect(store.dispatch.calledOnce).toEqual(true);
   });
 });

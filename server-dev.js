@@ -1,3 +1,4 @@
+/* eslint no-console:0 */
 require('babel-core/register');
 require('babel-polyfill');
 
@@ -16,7 +17,7 @@ const compiler = webpack(webpackConfig);
 app.use(webpackDevMiddleware(compiler, {
   noInfo: true,
   publicPath: webpackConfig.output.publicPath,
-  stats: { colors: true },
+  stats: { colors: true, chunks: false },
 }));
 app.use(webpackHotMiddleware(compiler));
 

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import { reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { reduxForm, formValueSelector } from 'redux-form';
 import shallowCompare from 'react/lib/shallowCompare';
 import CheckoutProfile from './CheckoutProfile';
 import CheckoutTest from './CheckoutTest';
@@ -13,7 +14,7 @@ class Form extends React.Component {
     handleSubmit: PropTypes.func.isRequired,
     route: PropTypes.object.isRequired,
     valid: PropTypes.bool.isRequired,
-    values: PropTypes.object.isRequired,
+    values: PropTypes.object,
   };
 
   static contextTypes = {
@@ -89,8 +90,20 @@ class Form extends React.Component {
 
 }
 
+const selector = formValueSelector('checkout'); // <-- same as form name
+
 export default reduxForm({
   form: 'checkout',
-  fields: ['firstName', 'lastName', 'email'],
   validate: checkoutValidation,
-})(Form);
+})(connect(
+  state => {
+    const { firstName, lastName, email } = selector(state, 'firstName', 'lastName', 'email');
+    return {
+      values: {
+        firstName,
+        lastName,
+        email,
+      },
+    };
+  }
+)(Form));

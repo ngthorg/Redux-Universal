@@ -1,9 +1,9 @@
-import expect from 'expect';
-import { describe, it } from 'mocha';
+import { fromJS } from 'immutable';
 import counter from '../counter';
 import * as types from '../../constants/ActionTypes';
-import { fromJS } from 'immutable';
 
+jest.unmock('../counter');
+jest.unmock('../../constants/ActionTypes');
 
 describe('reducers: counter', () => {
   it('action INCREMENT_COUNTER', () => {

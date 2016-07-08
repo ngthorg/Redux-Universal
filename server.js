@@ -1,3 +1,4 @@
+/* eslint no-console:0 */
 require('babel-core/register');
 require('babel-polyfill');
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import { expect } from 'chai';
-import { describe, it } from 'mocha';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
+import sinon from 'sinon';
 import ImgSlider from '../index';
 
+jest.dontMock('../index');
 
 describe('components: <ImgSlider />', () => {
   const images = [
@@ -14,15 +14,25 @@ describe('components: <ImgSlider />', () => {
   ];
 
   it('renders .img-slider__indicator-item', () => {
-    const wrapper = mount(<ImgSlider images={images} />);
-    expect(wrapper.find('.img-slider__indicator-item')).to.have.length(images.length);
-    expect(wrapper.state('current')).to.equal(0);
+    const wrapper = shallow(<ImgSlider images={images} />);
+    expect(wrapper.find('.img-slider__indicator-item')).toHaveLength(images.length);
+    expect(wrapper.state('current')).toEqual(0);
     wrapper.find('.img-slider__indicator-item').at(1).simulate('click');
-    expect(wrapper.state('current')).to.equal(1);
+
+    expect(wrapper.state('current')).toEqual(1);
   });
 
   it('renders .img-slider__item', () => {
-    const wrapper = mount(<ImgSlider images={images} />);
-    expect(wrapper.find('.img-slider__item')).to.have.length(images.length);
+    const preventDefault = sinon.spy();
+    const wrapper = shallow(<ImgSlider images={images} />);
+
+    expect(wrapper.find('.img-slider__item')).toHaveLength(4);
+    expect(preventDefault.calledOnce).toEqual(false);
+    expect(wrapper.state('showLightBox')).toEqual(false);
+
+    wrapper.find('.img-slider__item img').at(1).simulate('click', { preventDefault });
+
+    expect(preventDefault.calledOnce).toEqual(true);
+    expect(wrapper.state('showLightBox')).toEqual(true);
   });
 });

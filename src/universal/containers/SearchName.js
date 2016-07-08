@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { prepareOnUpdate } from '../decorators';
 import { getUser } from '../actions/github';
 import Loading from '../components/Loading';
-import NotFound from '../views/NotFound';
+import NotFound from '../components/NotFound';
 import SearchName from '../components/Search/SearchName';
 
 export const SearchNameContainer = (props) => {

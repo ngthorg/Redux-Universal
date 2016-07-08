@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import classnames from 'classnames';
 import shallowCompare from 'react/lib/shallowCompare';
 import checkoutValidation from './checkoutValidation';
@@ -8,9 +8,6 @@ import checkoutValidation from './checkoutValidation';
 class CheckoutTest extends React.Component {
 
   static propTypes = {
-    fields: PropTypes.shape({
-      email: PropTypes.object.isRequired,
-    }).isRequired,
     profileValid: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
   };
@@ -20,7 +17,7 @@ class CheckoutTest extends React.Component {
   }
 
   render() {
-    const { fields: { email }, valid, profileValid } = this.props;
+    const { valid, profileValid } = this.props;
     const classNumber = classnames({
       checkout__number: true,
       'checkout__number--focus': profileValid,
@@ -40,11 +37,12 @@ class CheckoutTest extends React.Component {
         <div className={classLine} />
         <fieldset className="form-group">
           <label>email</label>
-          <input
-            type="text"
+          <Field
+            name="email"
+            component="input"
+            type="email"
             className="form-control"
             placeholder="email"
-            {...email}
           />
         </fieldset>
       </div>
@@ -55,6 +53,5 @@ class CheckoutTest extends React.Component {
 
 export default reduxForm({
   form: 'checkout',
-  fields: ['firstName', 'lastName', 'email'],
   validate: checkoutValidation,
 })(CheckoutTest);

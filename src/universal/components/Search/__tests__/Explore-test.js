@@ -1,9 +1,9 @@
 import React from 'react';
-import { expect } from 'chai';
-import { describe, it } from 'mocha';
 import { mount } from 'enzyme';
 import sinon from 'sinon';
 import Explore from '../Explore';
+
+jest.unmock('../Explore');
 
 describe('components: <Explore />', () => {
   const dispatch = sinon.spy();
@@ -15,18 +15,18 @@ describe('components: <Explore />', () => {
   );
 
   it('renders input', () => {
-    const textChange = 'hello';
+    const textChange = 'My new value';
 
-    expect(wrapper.state('search')).to.equal(params.text);
+    expect(wrapper.state('search')).toEqual(params.text);
     wrapper.find('input').get(0).value = textChange;
-    wrapper.find('input').simulate('change');
-    expect(wrapper.state('search')).to.equal(textChange);
-    expect(wrapper.find('input').get(0).value).to.equal(textChange);
+    wrapper.find('input').simulate('change', { target: { value: textChange } });
+    expect(wrapper.state('search')).toEqual(textChange);
+    expect(wrapper.find('input').get(0).value).toEqual(textChange);
   });
 
   it('renders button', () => {
-    expect(dispatch.calledOnce).to.equal(false);
+    expect(dispatch.calledOnce).toEqual(false);
     wrapper.find('button').simulate('click');
-    expect(dispatch.calledOnce).to.equal(true);
+    expect(dispatch.calledOnce).toEqual(true);
   });
 });

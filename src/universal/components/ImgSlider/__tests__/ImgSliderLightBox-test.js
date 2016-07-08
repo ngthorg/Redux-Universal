@@ -1,10 +1,9 @@
 import React from 'react';
 import sinon from 'sinon';
-import { expect } from 'chai';
-import { describe, it } from 'mocha';
 import { mount } from 'enzyme';
 import ImgSliderLightBox from '../ImgSliderLightBox';
 
+jest.unmock('../ImgSliderLightBox');
 
 describe('components: <ImgSliderLightBox />', () => {
   const images = [
@@ -28,10 +27,10 @@ describe('components: <ImgSliderLightBox />', () => {
       />
     );
 
-    expect(wrapper.prop('images')).to.equal(images);
-    expect(wrapper.prop('current')).to.equal(0);
+    expect(wrapper.prop('images')).toEqual(images);
+    expect(wrapper.prop('current')).toEqual(0);
     wrapper.find('.img-slider-lightbox__close').simulate('click');
-    expect(handleHideLightBox.calledOnce).to.equal(true);
+    expect(handleHideLightBox.calledOnce).toEqual(true);
   });
 
   it('renders close .img-slider-lightbox__direction--next', () => {
@@ -49,7 +48,7 @@ describe('components: <ImgSliderLightBox />', () => {
     );
 
     wrapper.find('.img-slider-lightbox__direction--next').simulate('click');
-    expect(handlePrev.calledOnce).to.equal(true);
+    expect(handlePrev.calledOnce).toEqual(true);
   });
 
   it('renders close .img-slider-lightbox__direction--prev', () => {
@@ -67,14 +66,14 @@ describe('components: <ImgSliderLightBox />', () => {
     );
 
     wrapper.find('.img-slider-lightbox__direction--prev').simulate('click');
-    expect(handleNext.calledOnce).to.equal(true);
+    expect(handleNext.calledOnce).toEqual(true);
   });
 
   it('renders change props', () => {
     const handleHideLightBox = sinon.spy();
     const handlePrev = sinon.spy();
     const handleNext = sinon.spy();
-    // const spy = sinon.spy(ImgSliderLightBox.prototype, 'shouldComponentUpdate')
+    const spy = sinon.spy(ImgSliderLightBox.prototype, 'shouldComponentUpdate');
     const wrapper = mount(
       <ImgSliderLightBox
         current={0}
@@ -85,10 +84,10 @@ describe('components: <ImgSliderLightBox />', () => {
       />
     );
 
-    // expect(spy.calledOnce).to.equal(false)
+    expect(spy.calledOnce).toEqual(false);
+    expect(wrapper.prop('current')).toEqual(0);
     wrapper.setProps({ current: 1 });
-    expect(wrapper.prop('current')).to.equal(1);
-    // expect(spy.calledOnce).to.equal(true)
-    wrapper.setProps({ current: 1 });
+    expect(wrapper.prop('current')).toEqual(1);
+    expect(spy.calledOnce).toEqual(true);
   });
 });
